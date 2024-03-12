@@ -36,9 +36,15 @@ const Buttons = () => {
           return (
             <li className="flex justify-center items-center" key={index}>
                 <Button>
+                    <span className="flex w-1/3 justify-center">
                     {menu.icon}
-                    <span className="ml-1">{menu.title}</span>
+                    </span>
+                    <span className="flex w-1/3">
+                    {menu.title}
+                    </span>
+                    <span className="flex w-1/3 justify-center">
                     <RiArrowDropDownLine />
+                    </span>
                 </Button>
             </li>
           );

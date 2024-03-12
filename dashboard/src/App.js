@@ -7,7 +7,10 @@ function App() {
     <div className="h-screen">
       <div className="flex h-full">
         <Navbar />
-        </div>
+      </div>
+      <div>
+        
+      </div>
     </div>
     );
 }
