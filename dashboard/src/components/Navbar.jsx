@@ -6,6 +6,7 @@ import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { ImExit } from "react-icons/im";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { BiSupport } from "react-icons/bi";
+import Dropdown from "./Dropdown";
 
 
 
@@ -46,6 +47,7 @@ const Buttons = () => {
                     <RiArrowDropDownLine />
                     </span>
                 </Button>
+                    
             </li>
           );
         })

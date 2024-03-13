@@ -11,27 +11,30 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 export const menuItemsData = [
     {
       title: 'Dashboards',
-      url: '/',
-      icon: <FaChartPie />
+      icon: <FaChartPie />,
+      submenu: [
+        {
+          title: 'Mensal',
+        },
+        {
+          title: 'Diário',
+        }
+      ]
     },
     {
       title: 'Gestão',
-      url: '/services',
       icon: <FaChartLine />
     },
     {
       title: 'Financeiro',
-      url: '/about',
       icon: <FaMoneyBillAlt />
     },
     {
       title: 'Coletas',
-      url: '/coletas',
       icon: <TbTruckDelivery />
     },
     {
       title: 'Entregas',
-      url: '/entregas',
       icon: <RiEBike2Fill />
     }
   ];
