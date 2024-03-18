@@ -1,15 +1,13 @@
-import React from 'react'
-
-const Dropdown = ({ submenus }) => {
+const Dropdown = ({ submenus, dropdown }) => {
   return (
-      <ul className='dropdown'>
-        {submenus.map((submenu, index) => (
-          <li key={index} className='menu-items'>
-            <h2>{submenu.title}</h2>
-          </li>
-        ))}
-      </ul>
-    )
-}
+    <ul className={`dropdown ${dropdown ? "show" : ""}`}>
+      {submenus.map((submenu, index) => (
+        <li key={index} className="menu-items">
+          <a href={submenu.url}>{submenu.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
-export default Dropdown
+export default Dropdown;
