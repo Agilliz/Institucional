@@ -3,11 +3,16 @@ import Logo from './brand/Logo'
 
 const Navegacao = () => {
   return (
-    <div className='flex justify-end w-full nav h-full'>
-      <Logo></Logo>
-        <ul className='font-semibold text-xl w-full flex justify-center'>
-              <img src="./" alt="" />
+    <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}} className='nav'>
+      <Logo/>
+        <ul style={{display: 'flex', justifyContent: 'space-around', width: "50%", fontWeight: "600"}}>
+              <li>Sobre nós</li>
+              <li>Modo de Operação</li>
+              <li>Benefícios e vantagens</li>
+              <li>Contato</li>
         </ul>
+      
+      
     </div>
   )
 }

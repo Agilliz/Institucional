@@ -11,16 +11,32 @@
 
 body {
     background-color: #FFFFFF;
+    overflow-x: hidden;
+    margin: 0;
 }
 
 .nav {
     background-image: url(images/fundo-navbar.png);
-    
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 
 .background {
-    background-image: url(images/background-icons.png);
+    background-image: url(images/background-icons.svg);
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+::-webkit-scrollbar {
+    width: 6px; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #DE6600; 
+    border-radius: 6px; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #ff7700; 
+  }
