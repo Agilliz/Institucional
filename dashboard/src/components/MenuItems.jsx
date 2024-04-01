@@ -1,64 +1,55 @@
+
 import Dropdown from './Dropdown';
 import { useState, useEffect, useRef } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { IconContext } from "react-icons";
-
 
 const MenuItems = ({ items, depthLevel }) => {
-    const [dropdown, setDropdown] = useState(false);
+    const [openMenuIndex, setOpenMenuIndex] = useState(null);
     let ref = useRef();
+
     useEffect(() => {
         const handler = (event) => {
-         if (dropdown && ref.current && !ref.current.contains(event.target)) {
-          setDropdown(false);
-         }
+            if (openMenuIndex !== null && ref.current && !ref.current.contains(event.target)) {
+                setOpenMenuIndex(null);
+            }
         };
         document.addEventListener("mousedown", handler);
         document.addEventListener("touchstart", handler);
         return () => {
-         document.removeEventListener("mousedown", handler);
-         document.removeEventListener("touchstart", handler);
+            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("touchstart", handler);
         };
-       }, [dropdown]);
-    
+    }, [openMenuIndex]);
+
+    const handleMenuClick = (index) => {
+        setOpenMenuIndex(openMenuIndex === index ? null : index);
+    };
+
     return (
-        <li className="menu-items flex items-center w-4/5 p-2 relative" ref={ref} onClick={() => setDropdown((prev) => !prev)}>
-        <div className='w-1/3 flex items-center justify-center'>
-            {items.icon}
-        </div>
-        {items.submenu ? (
-            <>
-
-            <button className='w-1/3 flex items-center '
-            type="button" 
-            aria-haspopup="menu"
-            aria-expanded={dropdown ? "true" : "false"}
-            
-            >
-                {items.title}{' '}
+        <li className={`menu-item w-3/4 flex items-center flex-col ${openMenuIndex === depthLevel ? 'item-transition' : 'item-transition-reverse'}`}ref={ref}>
+            <button className={`menu-item-button flex w-full h-full  `} onClick={() => handleMenuClick(depthLevel)}>
+                {items.submenu ? (
+                    <>
+                        <div className="w-3/12 flex items-center justify-center h-full">
+                            {items.icon}
+                        </div>
+                        <h2 className='w-6/12 flex justify-start items-center h-full'>{items.title}</h2>
+                        <span id={`arrow-${depthLevel}`} className={`h-full items-center w-3/12 flex justify-center transform ${openMenuIndex === depthLevel ? 'rotate-180 transition-transform duration-500' : 'transition-transform duration-300'}`}>
+                            <RiArrowDropDownLine />
+                        </span>
+                    </>
+                ) : (
+                    <>
+                        <div className='w-3/12 flex items-center justify-center h-full'>
+                            {items.icon}
+                        </div>
+                        <div className='bg-red'>
+                            <h2 className='w-1/2 flex justify-start'>{items.title}</h2>
+                        </div>
+                    </>
+                )}
             </button>
-            
-
-            <Dropdown submenus={items.submenu} 
-            dropdown={dropdown}
-            />
-            </>
-        ) : (
-            <button className='w-1/3 flex items-center '
-            type="button" 
-            aria-haspopup="menu"
-            aria-expanded={dropdown ? "true" : "false"}
-            >
-                {items.title}{' '}
-            </button>
-        )}
-        <div className='w-1/3 flex items-center justify-center'>
-            <IconContext.Provider value={{ color: "blue", className: "global-class-name", size: "2rem"}}>
-                <div>
-                    <RiArrowDropDownLine />
-                </div>
-            </IconContext.Provider>
-        </div>
+            {items.submenu && openMenuIndex === depthLevel && <Dropdown submenus={items.submenu} dropdown={openMenuIndex === depthLevel}  />}
         </li>
     );
 };

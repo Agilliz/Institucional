@@ -1,3 +1,4 @@
+
 import { PiChartBar } from "react-icons/pi";
 import { BsInboxes } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -82,23 +83,9 @@ export const menuItemsData = [
     {
       title: 'Ajustes',
       icon: <TbAdjustmentsHorizontal />,
-      submenu: [
-        {
-          title: 'Mensal',
-        },
-        {
-          title: 'Diário',
-        }
-      ]
     },
     {
       title: 'Sair',
       icon: <ImExit />,
-      submenu: [
-        {
-          title: 'Cadastro de Colaboradores',
-        }
-      ]
     }
   ];
-

@@ -26,13 +26,14 @@ const Navbar = () => {
 
         
         <nav className="desktop-nav w-full h-full">
-      <ul className="menus flex flex-col h-4/6 pt-4">
+      <ul className="menus flex flex-col justify-evenly h-5/6">
+        <li><h2>Geral</h2></li>
         {menuItemsData.map((menu, index) => {
           return <MenuItems items={menu} key={index} />;
         })}
       </ul>
 
-      <ul className="menus flex flex-col justify-evenly h-2/6">
+      <ul className="menus flex flex-col justify-evenly h-1/6">
         {menuItemsSettingsExit.map((menu, index) => {
           return <MenuItems items={menu} key={index} />
         })}

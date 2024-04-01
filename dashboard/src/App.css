@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -43,14 +44,14 @@ header {
 .desktop-nav .menu-items a {
   display: block;
   font-size: inherit;
-  color: inherit;
+  color: #2C2D5B;
   text-decoration: none;
 }
 
 .desktop-nav .menu-items button {
   display: flex;
   align-items: center;
-  color: inherit;
+  color: #2C2D5B;
   font-size: inherit;
   border: none;
   background-color: transparent;
@@ -84,25 +85,47 @@ header {
 }
 
 .desktop-nav .dropdown {
-  position: absolute;
-  right: 0;
-  left: auto;
-  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
-    0 4px 6px -2px rgba(71, 63, 79, 0.16);
   font-size: 0.875rem;
   z-index: 9999;
   min-width: 10rem;
   padding: 0.5rem 0;
   list-style: none;
   background-color: #fff;
-  border-radius: 0.5rem;
   display: none;
+  color: #2C2D5B;
+}
+
+.dropdown:active {
+  background-color: black;
 }
 
 .desktop-nav .dropdown.show {
   display: block;
 }
 
+
+
+
+.item-transition {
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+  background-color: #DE6600;
+  color: white;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.item-transition-reverse {
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+  background-color: white;
+  color: black;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+
+#arrow {
+  transition: transform 5s ease; 
+}
 /* .desktop-nav .dropdown .dropdown-submenu {
   position: absolute;
   left: 100%;
@@ -151,6 +174,7 @@ header {
     padding: 0.5rem 0;
     background-color: #fff;
     border-radius: 0.5rem;
+    
   }
 
   .mobile-nav .menu-items a {
@@ -234,3 +258,5 @@ header {
   height: 100vh;
   gap: 20px;
 }
+
+
