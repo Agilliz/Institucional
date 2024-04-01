@@ -95,9 +95,6 @@ header {
   color: #2C2D5B;
 }
 
-.dropdown:active {
-  background-color: black;
-}
 
 .desktop-nav .dropdown.show {
   display: block;
