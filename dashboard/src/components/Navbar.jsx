@@ -1,32 +1,26 @@
 import React from "react";
 import Logo from "./Logo";
-import Button from "./Button";
 import { menuItemsData, menuItemsSettingsExit } from "./MenuItemsData";
-import { TbAdjustmentsHorizontal } from "react-icons/tb";
-import { ImExit } from "react-icons/im";
-import { BiSupport } from "react-icons/bi";
-import Dropdown from "./Dropdown";
 import MenuItems from "./MenuItems";
 
 
 
 const Navbar = () => {
 
-   
-    
-    return (
-        // <div className="w-1/6 h-full bg-agilzblue flex flex-col">
-        //     <div className="w-full flex justify-center p-2">
-        //         <Logo></Logo>
-        //     </div>
-        //     <div id="containerButtons" className="flex flex-col items-center justify-center h-full">
-        //         <Buttons /></div>
-        // </div>
 
 
-        
-        <nav className="desktop-nav w-full h-full">
-      <ul className="menus flex flex-col justify-evenly h-5/6">
+  return (
+    // <div className="w-1/6 h-full bg-agilzblue flex flex-col">
+    //     <div className="w-full flex justify-center p-2">
+    //         <Logo></Logo>
+    //     </div>
+    //     <div id="containerButtons" className="flex flex-col items-center justify-center h-full">
+    //         <Buttons /></div>
+    // </div>
+
+    <header className="desktop-nav w-1/6 h-full">
+      <Logo />
+      <ul className="menus flex flex-col justify-evenly h-4/6">
         <li><h2>Geral</h2></li>
         {menuItemsData.map((menu, index) => {
           return <MenuItems items={menu} key={index} />;
@@ -38,8 +32,8 @@ const Navbar = () => {
           return <MenuItems items={menu} key={index} />
         })}
       </ul>
-    </nav>
-    )
+    </header>
+  )
 }
 
 
@@ -65,7 +59,7 @@ const Navbar = () => {
 //                     <RiArrowDropDownLine />
 //                     </span>
 //                 </Button>
-                    
+
 //             </li>
 //           );
 //         })
@@ -99,8 +93,8 @@ const Navbar = () => {
 //     )
 //   }
 
-  
 
-  
+
+
 
 export default Navbar

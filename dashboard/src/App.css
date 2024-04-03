@@ -14,6 +14,7 @@ header {
   color: #212529;
 }
 
+
 .nav-area {
   display: flex;
   align-items: center;
@@ -256,4 +257,11 @@ header {
   gap: 20px;
 }
 
+input::placeholder {
+  font-size: 1.2em;
+  padding-left: 1rem;
+}
 
+input::after {
+  border: #DE6600;
+}
