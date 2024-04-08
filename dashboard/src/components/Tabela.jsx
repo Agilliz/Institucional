@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { FaTrashCan } from "react-icons/fa6";
 import api from "../api";
 
-const Tabela = ({id, nome, setor, unidade}) => {
+const Tabela = () => {
+    const [listaFuncionarios, setListaFuncionarios] = useState([]);
 
-    function listar(){
-
+    useEffect(() => {
         api.get('funcionario/', {
             auth: {
                 username: 'agilizDev',
@@ -13,118 +13,57 @@ const Tabela = ({id, nome, setor, unidade}) => {
             }
         })
         .then((res) => {
-            console.log(res);
-        }).catch((error) => {
-            console.log(error);
+            setListaFuncionarios(res.data.data.content);
+
+            console.log(listaFuncionarios);
         })
-    }
+        .catch((error) => {
+            console.log(error);
+        });
+    }, []);
 
-  return (
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg pt-10">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    ID
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Nome
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Setor
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Unidade
-                </th>
-                <th scope="col" class="px-6 py-3">
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    {id}
-                </th>
-                <td class="px-6 py-4">
-                    {nome}
-                </td>
-                <td class="px-6 py-4">
-                    {setor}
-                </td>
-                <td class="px-6 py-4">
-                    {unidade}
-                </td>
-                <td class="px-6 py-4 flex justify-around w-7/12">
-                    <div href="#" class="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg">Visualizar</div>
-                    <div href="#" class="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg p-2"><h2>Alterar</h2></div>
-                    <div href="#" class="font-medium bg-red-600 text-white hover:underline flex justify-center items-center rounded-lg"><span className='p-2'><FaTrashCan /></span></div>
-                </td>
-            </tr><tr class="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    {id}
-                </th>
-                <td class="px-6 py-4">
-                    {nome}
-                </td>
-                <td class="px-6 py-4">
-                    {setor}
-                </td>
-                <td class="px-6 py-4">
-                    {unidade}
-                </td>
-                <td class="px-6 py-4 flex justify-around w-7/12">
-                    <div href="#" class="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg">Visualizar</div>
-                    <div href="#" class="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg p-2"><h2>Alterar</h2></div>
-                    <div href="#" class="font-medium bg-red-600 text-white hover:underline flex justify-center items-center rounded-lg"><span className='p-2'><FaTrashCan /></span></div>
-                </td>
-            </tr><tr class="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    {id}
-                </th>
-                <td class="px-6 py-4">
-                    {nome}
-                </td>
-                <td class="px-6 py-4">
-                    {setor}
-                </td>
-                <td class="px-6 py-4">
-                    {unidade}
-                </td>
-                <td class="px-6 py-4 flex justify-around w-7/12">
-                    <div href="#" class="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg">Visualizar</div>
-                    <div href="#" class="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg p-2"><h2>Alterar</h2></div>
-                    <div href="#" class="font-medium bg-red-600 text-white hover:underline flex justify-center items-center rounded-lg"><span className='p-2'><FaTrashCan /></span></div>
-                </td>
-            </tr><tr class="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                    {id}
-                </th>
-                <td class="px-6 py-4">
-                    {nome}
-                </td>
-                <td class="px-6 py-4">
-                    {setor}
-                </td>
-                <td class="px-6 py-4">
-                    {unidade}
-                </td>
-                <td class="px-6 py-4 flex justify-around w-7/12">
-                    <div href="#" class="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg">Visualizar</div>
-                    <div href="#" class="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg p-2"><h2>Alterar</h2></div>
-                    <div href="#" class="font-medium bg-red-600 text-white hover:underline flex justify-center items-center rounded-lg"><span className='p-2'><FaTrashCan /></span></div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <div className='w-1/6'>
-    <button onClick={listar}>CLICA BUAMISA</button>
-    </div>
-
-</div>
-
-  )
+    return (
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-10">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                    <tr>
+                        <th scope="col" className="px-6 py-3">
+                            ID
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Nome
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Email
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {listaFuncionarios.map(func => (
+                        <tr key={func.id} className="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                {func.idColaborador}
+                            </th>
+                            <td className="px-6 py-4">
+                                {func.nomeColaborador}
+                            </td>
+                            <td className="px-6 py-4">
+                                {func.emailColaborador}
+                            </td>
+                            <td className="px-6 py-4">
+                                {func.unidade}
+                            </td>
+                            <td className="px-6 py-4 flex justify-around">
+                            <div href="#" className="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg ">Visualizar</div>
+                                <div href="#" className="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg "><h2 className='p-2'>Alterar</h2></div>
+                                <div href="#" className="font-medium bg-red-600 text-white hover:underline flex justify-center items-center rounded-lg "><span className='p-2'><FaTrashCan /></span></div>
+                                </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 }
 
-export default Tabela
+export default Tabela;

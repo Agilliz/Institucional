@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosSearch } from "react-icons/io";
 import Tabela from './Tabela';
-import CadastroColaboradores from './CadastroColaboradores';
+import CadastroColaboradores from './Container';
 
 const GestaoColaboradores = () => {
   return (
@@ -12,11 +12,9 @@ const GestaoColaboradores = () => {
             <input className='w-4/6 bg-slate-200 rounded-lg input' type="text" placeholder='Colaborador...' />
             </div>
         </div>
-        <Tabela />
+        <Tabela /> 
 
-        <div>
-            {/* <CadastroColaboradores /> */}
-        </div>
+        
     </div>
   )
 }

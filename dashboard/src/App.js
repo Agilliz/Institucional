@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import GestaoColaboradores from "./components/GestaoColaboradores";
+import Container from "./components/Container";
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       <Navbar />
       <div className="flex flex-col w-full">
       <Header />
-      <GestaoColaboradores />
+        {/* <GestaoColaboradores />  */}
+      <Container />
+
       </div>
       
     </div>
