@@ -1,19 +1,26 @@
 import "./App.css";
 import Container from "./components/Container";
 import Navegacao from "./components/Navegacao";
-import logoCoelhinho from "./images/logo-coelinho.png";
+import ImagemModo from "./components/ImagemModo";
 import fotoPC from "./images/monitor.png";
 import fotoCaminhao from "./images/caminhao.svg";
 import numero1ModOperacoes from "./images/svgNumero1Mod.svg";
 import segundaImagemModo from "./images/segunda-imagem-modo.svg";
 import vetorSeta1 from "./images/vetor-seta-1.svg";
-import vetorSeta2 from "./images/vetor-seta-2.svg"
-import maoCelular from "./images/maoCelular.svg"
+import vetorSeta2 from "./images/vetor-seta-2.svg";
+import maoCelular from "./images/maoCelular.svg";
 import Etapa from "./components/EtapaModoOperacao";
 import numero3ModOperacoes from "./images/svgNumero3Mod.svg";
 import rapazMoto from "./images/rapazMoto.svg";
 import numero2ModOperacoes from "./images/svgNumero2Mod.svg";
 import mocaMoto from "./images/mocaNaMoto.svg";
+import caminhaoBeneficios from "./images/svgCaminhaoBeneficios.svg";
+import ContainerBeneficios from "./components/containerBeneficios";
+import casaBeneficios from "./images/casaBeneficios.svg";
+import localBeneficios from "./images/localBeneficios.svg";
+
+
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -37,8 +44,8 @@ function App() {
                       flexDirection: "column",
                       justifyContent: "center",
                       height: "auto",
-                      fontSize: "32px",
-                      marginBottom: "5%",
+                      fontSize: "40px",
+                      marginBottom: "3%",
                     }}
                   >
                     <h1>
@@ -54,7 +61,7 @@ function App() {
                     </h1>
                     <button
                       style={{
-                        width: "50%",
+                        width: "40%",
                         height: "50px",
                         backgroundColor: "#DE6600",
                         borderRadius: "10px",
@@ -79,7 +86,12 @@ function App() {
                   <img
                     src={maoCelular}
                     alt="Mão de madeira usando celular com logo da aplicação"
-                    style={{ maxWidth: "98%", maxHeight: "98%", marginRight: "5%", filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5))"}}
+                    style={{
+                      maxWidth: "98%",
+                      maxHeight: "98%",
+                      marginRight: "5%",
+                      filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5))",
+                    }}
                   />
                 </div>
               }
@@ -174,31 +186,35 @@ function App() {
             className="w-full flex items-center justify-center"
             style={{ position: "relative" }}
           >
-             <div
-                    style={{
-                      width: "54%",
-                      position: "absolute",
-                      transform: "translate(60%, -90%)",
-                      top: "50%",
-                      zIndex: 1
-                    }}
-                  >
-                    <img src={vetorSeta1} style={{width: "60%"}}></img>
-                  </div>
+            <div
+              style={{
+                width: "54%",
+                position: "absolute",
+                transform: "translate(60%, -90%)",
+                top: "50%",
+                zIndex: 1,
+              }}
+            >
+              <img
+                src={vetorSeta1}
+                style={{ width: "60%", zIndex: "-10" }}
+              ></img>
+            </div>
 
-                  <div
-                    style={{
-                      width: "51%",
-                      position: "absolute",
-                      transform: "translate(65%, 150%)",
-                      top: "50%",
-                      zIndex: 1,
-                      
-                    }}
-                  >
-                    <img src={vetorSeta2} style={{width: "60%"}}></img>
-                  </div>
-
+            <div
+              style={{
+                width: "51%",
+                position: "absolute",
+                transform: "translate(65%, 150%)",
+                top: "50%",
+                zIndex: 1,
+              }}
+            >
+              <img
+                src={vetorSeta2}
+                style={{ width: "60%", zIndex: "-10" }}
+              ></img>
+            </div>
 
             <Container
               tituloSessao={
@@ -207,7 +223,6 @@ function App() {
                     display: "flex",
                     justifyContent: "left",
                     alignItems: "center",
-                    
                   }}
                 >
                   <div
@@ -254,49 +269,38 @@ function App() {
                     justifyContent: "center",
                     alignItems: "center",
                     textAlign: "center",
-                    
                   }}
                 >
-                 
-
-                 <Etapa
-                 texto={`<span>Com nosso aplicativo móvel, o</span>
+                  <Etapa
+                    texto={`<span>Com nosso aplicativo móvel, o</span>
                  <span>coletor pode escanear facilmente</span>
                  <span>todos os pacotes do fornecedor</span>
                  <span>de forma rápida e prática. </span>`}
-                 svgNUmeroEtapa={numero1ModOperacoes}
-                  etapa={"Coleta"}
-                  margem={"25%"}
-                 />
+                    svgNUmeroEtapa={numero1ModOperacoes}
+                    etapa={"Coleta"}
+                    margem={"25%"}
+                  />
 
                   <div>
-                    <img
-                      src={segundaImagemModo}
-                      alt="Imagem de moça carregando pacotes com celular na mão"
-                      style={{
-                        maxWidth: "70%",
-                        maxHeight: "70%",
-                        
-                        marginTop: "10%",
-                      }}
+                    <ImagemModo
+                      srcParam={segundaImagemModo}
+                      altParam={
+                        "Imagem de moça carregando pacotes com celular na mão"
+                      }
                     />
 
-                  <Etapa
-                  texto={`<span>Os entregadores selecionam as</span>
+                    <Etapa
+                      texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
                         <span>e automaticamente gera uma rota </span>
                         <span>otimziada. Assim que a rota é</span>
                         <span>definida, o cliente consumidor é</span>
                         <span>prontamente notificado de que seu</span>
                         <span>pedido está a caminho.</span>`}
-
-                  svgNUmeroEtapa={numero3ModOperacoes}
-                  etapa={"Entregas"}
-                  margem={"10%"}
-                      />  
-
-                    
-
+                      svgNUmeroEtapa={numero3ModOperacoes}
+                      etapa={"Entregas"}
+                      margem={"10%"}
+                    />
                   </div>
                 </div>
               }
@@ -310,42 +314,308 @@ function App() {
                     textAlign: "center",
                   }}
                 >
-                 <img
-                      src={rapazMoto}
-                      alt="Rapaz andando de moto com rotas ao fundo"
-                      style={{
-                        maxWidth: "70%",
-                        maxHeight: "70%",
-                        marginTop: "10%",
-                      }}
-                    />
-                   <Etapa
-                  texto={`<span>Os entregadores selecionam as</span>
+                  <ImagemModo
+                    srcParam={rapazMoto}
+                    altParam={"Rapaz andando de moto com rotas ao fundo"}
+                  />
+                  <Etapa
+                    texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
                         <span>e automaticamente gera uma rota </span>
                         <span>otimziada. Assim que a rota é</span>
                         <span>definida, o cliente consumidor é</span>
                         <span>prontamente notificado de que seu</span>
                         <span>pedido está a caminho.</span>`}
+                    svgNUmeroEtapa={numero2ModOperacoes}
+                    etapa={"Gestão e Preparo"}
+                    margem={"50%"}
+                  />
 
-                  svgNUmeroEtapa={numero2ModOperacoes}
-                  etapa={"Gestão e Preparo"}
-                  margem={"50%"}
-                      />  
-
-<img
-                      src={mocaMoto}
-                      alt="Rapaz andando de moto com rotas ao fundo"
-                      style={{
-                        maxWidth: "70%",
-                        maxHeight: "70%",
-                       
-                      }}
-                    />
-
+                  <ImagemModo
+                    srcParam={mocaMoto}
+                    altParam={
+                      "Moça apoiada em uma moto com uma imagem de rota ao fundo"
+                    }
+                  />
                 </div>
               }
             />
+
+            <Container
+              altura={"80vh"}
+              corFundo={"#F4F6F9"}
+              largura={100}
+              ladoEsquerdo={
+                <>
+                  <div
+                    style={{
+                      display: "flex",
+                      width: "90%",
+                      height: "85%",
+                      alignItems: "flex-end",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "top",
+                          width: "80%",
+                          height: "auto",
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontSize: "32px",
+                            textAlign: "center",
+                            fontWeight: "400",
+                          }}
+                        >
+                          <h1>
+                            <span
+                              style={{
+                                borderBottom: "4px solid #DE6600",
+                                borderRadius: "3px",
+                              }}
+                            >
+                              <b>Benefícios</b>
+                            </span>
+                            <span> e vantagens </span>
+                          </h1>
+                        </div>
+                        <img
+                          src={fotoCaminhao}
+                          alt="Decoração com imagem simples de caminhão"
+                          style={{
+                            maxWidth: "15%",
+                            maxHeight: "15%",
+                            zIndex: "1",
+                          }}
+                        ></img>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        width: "90%",
+                        height: "85%",
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <ContainerBeneficios
+                        texto={`<span>Com a nossa solução, oferecemos </span>
+               <span>recursos avançados de rastreamento</span>
+               <span>em tempo real que permitem que</span>
+               <span>você acompanhe o status e a </span>
+               <span>localização das coletas de forma </span>
+               <span>eficiente. Utilizando tecnologias</span>
+               <span>avançadas, como GPS e sistemas de</span>
+               <span>comunicação integrados, fornecemos</span>
+               <span>informações precisas e atualizadas.</span>`}
+                        titulo={"Coletas"}
+                        svg={caminhaoBeneficios}
+                      />
+
+                      <ContainerBeneficios
+                        texto={`
+                  <span>Com nossa aplicação, simplificamos e</span>
+                  <span>otimizamos todo o processo de </span>
+                  <span>gestão e preparo de pacotes.</span>
+                  <span>Integramos um sistema de </span>
+                  <span>gerenciamento de estoque e </span>
+                  <span>classificação automatizada,</span>
+                  <span>permitindo uma organização eficiente</span>
+                  <span>dos pacotes agilizando o processo de</span>
+                  <span>preparação dos pacotes para o envio.</span>
+                  `}
+                        titulo={"Gestão e Preparo de Pacotes"}
+                        svg={casaBeneficios}
+                      />
+
+                      <ContainerBeneficios
+                        texto={`<span>Oferecemos recursos avançados</span>
+                      <span>de roteirização e otimização</span>
+                      <span>de rotas, permitindo que você</span>
+                      <span>planeje entregas de forma</span>
+                      <span>eficiente e minimize o tempo</span>
+                      <span>de trânsito. Implementamos um</span>
+                      <span>sistema de comunicação em</span>
+                      <span>tempo real entre os entregadores</span>
+                      <span>e a central de logística.</span>
+                      `}
+                        titulo={"Entregas"}
+                        svg={localBeneficios}
+                      />
+                    </div>
+                  </div>
+                </>
+              }
+            />
+
+            <Container
+              altura={"25vh"}
+              corFundo={"#F4F6F9"}
+              largura={100}
+              ladoEsquerdo={
+                <div
+                  style={{
+                    display: "flex",
+                    width: "87%",
+                    height: "100%",
+                    justifyContent: "right",
+                  }}
+                >
+                  <button
+                    style={{
+                      width: "18%",
+                      backgroundColor: "#DE6600",
+                      height: "25%",
+                      borderRadius: "10px",
+                      color: "white",
+                      fontWeight: "500",
+                      marginTop: "8%",
+                    }}
+                  >
+                    Contratar Serviço
+                  </button>
+                </div>
+              }
+            />
+
+            <Container
+              altura={"90vh"}
+              largura={100}
+              tituloSessao={
+                <div>
+                  <h1
+                    style={{
+                      fontSize: "32px",
+                      textAlign: "center",
+                      fontWeight: "600",
+                    }}
+                  >
+                    <span
+                      style={{
+                        borderBottom: "4px solid #DE6600",
+                        borderRadius: "3px",
+                      }}
+                    >
+                      Envie -
+                    </span>{" "}
+                    nos um e-mail
+                  </h1>
+                </div>
+              }
+              ladoEsquerdo={
+                <div className="w-full flex items-center justify-center">
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "45vw",
+                      height: "55vh",
+                      backgroundColor: "#2C2D5B",
+                      borderRadius: "10px",
+                      flexDirection: "column",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        marginBottom: "8%",
+                      }}
+                    >
+                      <h1
+                        style={{
+                          color: "white",
+                          fontWeight: "600",
+                          fontSize: "1.3rem",
+                        }}
+                      >
+                        Tire suas dúvidas!
+                      </h1>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        marginBottom: "4%",
+                      }}
+                    >
+                      <input
+                        id="idEmail"
+                        style={{
+                          width: "90%",
+                          height: "50px",
+                          borderRadius: "10px",
+                          border: "none",
+                          padding: "10px",
+                          fontSize: "20px",
+                        }}
+                        placeholder="Seu e-mail"
+                      ></input>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <textarea
+                        id="textAreaMensagem"
+                        style={{
+                          width: "90%",
+                          height: "180px",
+                          borderRadius: "10px",
+                          border: "none",
+                          padding: "10px",
+                          fontSize: "20px",
+                        }}
+                        placeholder="Sua mensagem"
+                      ></textarea>
+                      <button
+                        style={{
+                          position: "absolute",
+                          top: "75%",
+                          left: "75%",
+                          zIndex: "1",
+                          width: "18%",
+                          backgroundColor: "#DE6600",
+                          height: "10%",
+                          borderRadius: "10px",
+                          color: "white",
+                          fontWeight: "500",
+                          marginTop: "2%",
+                        }}
+                      >
+                        Enviar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              }
+            />
+
+              <Footer/>
+           
           </div>
         </div>
       </div>
