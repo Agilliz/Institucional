@@ -5,7 +5,7 @@ import api from "../api";
 const Tabela = () => {
     const [listaFuncionarios, setListaFuncionarios] = useState([]);
 
-    useEffect(() => {
+     useEffect(() => {
         api.get('funcionario/', {
             auth: {
                 username: 'agilizDev',
@@ -14,7 +14,6 @@ const Tabela = () => {
         })
         .then((res) => {
             setListaFuncionarios(res.data.data.content);
-
             console.log(listaFuncionarios);
         })
         .catch((error) => {

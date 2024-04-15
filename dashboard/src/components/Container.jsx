@@ -3,7 +3,7 @@ import Formulario from './Formulario'
 
 const Container = () =>  {
   return (
-    <div className='h-full w-full'>
+    <div className='h-full w-full flex flex-col'>
       <Formulario />
     </div>
   )

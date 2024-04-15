@@ -1,28 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import Navbar from './components/Navbar';
 import './index.css';
-
+import Header from './components/Header';
 // styles
 import './App.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-// import Root from "./routes/root";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Root />,
-//   },
-// ]);
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <RouterProvider router={router} /> */}
+    <div className='flex h-screen'>
+    <Navbar />
+    <div className='w-full '>
+  <Header /> 
     <App />
+    </div>
+    </div>
   </React.StrictMode>
 );

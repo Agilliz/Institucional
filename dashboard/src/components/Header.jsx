@@ -6,7 +6,7 @@ import { BsToggleOff } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <header className='h-20 w-full flex'>
+    <header className='h-24 w-full flex'>
         <div className='flex flex-col justify-center items-center w-1/2'>
           <h1>Title</h1>
           <h3>
