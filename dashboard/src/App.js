@@ -1,14 +1,18 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import GestaoColaboradores from "./components/GestaoColaboradores";
-import Container from "./components/Container";
 import Rotas from "./routes";
+import Navbar from './components/Navbar';
+import Header from './components/Header';
 
 function App() {
   return (
-    <Rotas />
-    );
+    <div className='flex h-screen'>
+      <Navbar />
+      <div className='w-full'>
+        <Header />
+        <Rotas />
+      </div>
+    </div>
+  );
 }
 
 export default App;

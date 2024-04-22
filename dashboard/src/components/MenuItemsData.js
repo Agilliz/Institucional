@@ -17,11 +17,14 @@ export const menuItemsData = [
       submenu: [
         {
           title: 'Mensal',
+          urlNavigate: "/mensal"
         },
         {
           title: 'Diário',
+          urlNavigate: "/diario"
         }
-      ]
+      ],
+      
     },
     {
       title: 'Gestão',
@@ -29,6 +32,7 @@ export const menuItemsData = [
       submenu: [
         {
           title: 'Cadastro de Colaboradores',
+          urlNavigate: "/cadastro-colaboradores"
         }
       ]
     },
@@ -38,6 +42,7 @@ export const menuItemsData = [
       submenu: [
         {
           title: 'Despesas fixas e variáveis',
+          urlNavigate: "/despesas"
         }
       ]
     },
@@ -47,9 +52,11 @@ export const menuItemsData = [
       submenu: [
         {
           title: 'Dashboard Coletas',
+          urlNavigate: "/dashboard-coletas"
         },
         {
           title: 'Gestão Coletas',
+          urlNavigate: "/gestao-coletas"
         }
       ]
     },
@@ -58,10 +65,12 @@ export const menuItemsData = [
       icon: <RiMotorbikeLine />,
       submenu: [
         {
-          title: 'Dashboard Entregas'
+          title: 'Dashboard Entregas',
+          urlNavigate: "/dashboard-entregas"
         },
         {
-          title: 'Gestão Entregas'
+          title: 'Gestão Entregas',
+          urlNavigate: "/gestao-entregas"
         }
       ]
     },
@@ -70,10 +79,12 @@ export const menuItemsData = [
       icon: <BiSupport />,
       submenu: [
         {
-          title: 'Suporte ao Cliente'
+          title: 'Suporte ao Cliente',
+          urlNavigate: "/suporte-cliente"
         },
         {
-          title: 'Suporte ao Motoboy'
+          title: 'Suporte ao Motoboy',
+          urlNavigate: "/suporte-motoboy"
         }
       ]
     }

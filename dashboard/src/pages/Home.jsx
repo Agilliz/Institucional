@@ -22,6 +22,7 @@ function Home() {
         Equipe Agil Logistics
     </h2>
     <button onClick={() => navigate("/login")}>Ir para a home</button>
+    <button onClick={() => navigate("/mural-colaboradores")}>Mural</button>
     </div>
   )
 }

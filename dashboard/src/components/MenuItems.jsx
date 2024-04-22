@@ -1,9 +1,10 @@
+"use-client"
 
 import Dropdown from './Dropdown';
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef,  } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
-const MenuItems = ({ items, depthLevel }) => {
+const MenuItems = ({ items, depthLevel,  }) => {
     const [openMenuIndex, setOpenMenuIndex] = useState(null);
     let ref = useRef();
 
