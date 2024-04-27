@@ -18,8 +18,8 @@ const Etapa = ({texto, etapa, svgNUmeroEtapa, margem}) => {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            width: "50%",
+            justifyContent: "",
+            maxWidth: "60%",
             marginBottom: "4%",
           }}
         >
@@ -30,6 +30,8 @@ const Etapa = ({texto, etapa, svgNUmeroEtapa, margem}) => {
               width: "100%",
               fontSize: "32px",
               fontWeight: "700",
+              textAlign: "left",
+              marginLeft: "5%",
             }}
             
           >     

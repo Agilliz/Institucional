@@ -99,6 +99,10 @@ function App() {
           </div>
           <div className="w-full flex items-center justify-center">
             <Container
+            altura={"3vh"}
+            corFundo={"#F4F6F9"}
+            />
+            <Container
               tituloSessao={
                 <div>
                   <h1
@@ -188,10 +192,9 @@ function App() {
           >
             <div
               style={{
-                width: "54%",
+                width: "%",
                 position: "absolute",
-                transform: "translate(60%, -90%)",
-                top: "50%",
+                transform: "translate(65%, 335%)",
                 zIndex: 1,
               }}
             >
@@ -203,10 +206,9 @@ function App() {
 
             <div
               style={{
-                width: "51%",
+                width: "49%",
                 position: "absolute",
-                transform: "translate(65%, 150%)",
-                top: "50%",
+                transform: "translate(71%, 661%)",
                 zIndex: 1,
               }}
             >
@@ -268,7 +270,7 @@ function App() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    textAlign: "center",
+                    textAlign: "center"
                   }}
                 >
                   <Etapa
@@ -287,6 +289,7 @@ function App() {
                       altParam={
                         "Imagem de moça carregando pacotes com celular na mão"
                       }
+                      maxWidth={"80%"}
                     />
 
                     <Etapa
@@ -312,11 +315,13 @@ function App() {
                     justifyContent: "center",
                     alignItems: "center",
                     textAlign: "center",
+                    marginBottom: "10%",
                   }}
                 >
                   <ImagemModo
                     srcParam={rapazMoto}
                     altParam={"Rapaz andando de moto com rotas ao fundo"}
+                    maxWidth={"80%"}
                   />
                   <Etapa
                     texto={`<span>Os entregadores selecionam as</span>
@@ -336,6 +341,7 @@ function App() {
                     altParam={
                       "Moça apoiada em uma moto com uma imagem de rota ao fundo"
                     }
+                    maxWidth={"60%"}
                   />
                 </div>
               }
@@ -490,7 +496,9 @@ function App() {
                 </div>
               }
             />
-
+            <Container
+            altura={"2vh"}
+            />
             <Container
               altura={"90vh"}
               largura={100}
