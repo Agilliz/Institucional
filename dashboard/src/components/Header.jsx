@@ -1,8 +1,5 @@
-import Logo from './Logo';
-import Navbar from './Navbar';
 import { MdNotifications } from "react-icons/md";
 import { PiUserRectangleFill } from "react-icons/pi";
-import { BsToggleOff } from "react-icons/bs";
 
 
 const Header = () => {

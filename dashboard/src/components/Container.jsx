@@ -1,5 +1,5 @@
 import React from 'react'
-import Formulario from './Formulario'
+import Formulario from './FormularioCliente'
 
 const Container = () =>  {
   return (
