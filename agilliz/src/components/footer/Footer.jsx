@@ -1,7 +1,7 @@
 import React from 'react';
-import logoNomeFooter from "../images/logoComNomeFooter.svg";
-import logoCoelhinhoDireita from "../images/logoCoelhoDireita.svg";
-import logoCoelhinho from "../images/logo-coelinho.png";
+import logoNomeFooter from "../../images/logoComNomeFooter.svg";
+import logoCoelhinhoDireita from "../../images/logoCoelhoDireita.svg";
+import logoCoelhinho from "../../images/logo-coelinho.png";
 
 
 
