@@ -22,7 +22,7 @@ const Tabela = () => {
     }, []);
 
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-10">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>

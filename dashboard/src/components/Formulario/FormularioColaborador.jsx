@@ -23,19 +23,19 @@ function FormularioColaborador() {
     <>
       <div className='p-6'>
                         <div className='w-1/2'>
-                            <SelectBox label="Tipo de cliente" options={options} value={selectedValue} onChange={handleChange} />
+                            <SelectBox label="Tipo colaborador" options={options} value={selectedValue} onChange={handleChange} />
                         </div>
 
                         <form className='pt-8'>
-                            <h2 className='text-agilzorange'>Dados empresariais</h2>
+                            <h2 className='text-agilzorange'>Dados pessoais</h2>
                             <div class="grid md:grid-cols-2 md:gap-6 pt-4">
-                                <Input label="Razão social" size="relative z-0 mb-5 group" />
-                                <Input label="Nome fantasia" size="relative z-0 mb-5 group" />
-                                <Input label="CNPJ" size="relative z-0 mb-5 group" />
+                                <Input label="Nome completo" size="relative z-0 mb-5 group" />
+                                <Input label="RG" size="relative z-0 mb-5 group" />
+                                <Input label="CPF" size="relative z-0 mb-5 group" />
                             
-                                <Input label="Unidade" />
+                                <Input label="Data Nascimento" />
                                 <Input label="Telefone" />
-                                <Input label="Hora Corte" />
+                                <Input label="Tipo CNH" />
                             </div>
                         </form>
 

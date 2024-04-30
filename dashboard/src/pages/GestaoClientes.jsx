@@ -9,7 +9,10 @@ function GestaoColaboradores() {
     return (
     <>
     <div><TabelaClientes /></div>
+    <div className='fixed bottom-3.5 right-3.5'>
     <Button event={() => setModal(true)} label=" + Cadastrar cliente"/>
+    </div>
+
     <Modal isOpen={openModal} setModalOpen={() => setModal(!openModal)} conteudo={<Formulario />}/>
     </>
   )

@@ -8,11 +8,8 @@ const Formulario = () => {
   const [selectedValue, setSelectedValue] = useState('');
 
   const options = [
-    { value: 'entregador', label: 'Entregador' },
-    { value: 'coletor', label: 'Coletor' },
-    { value: 'gestor', label: 'Gestor' },
-    { value: 'financeiro', label: 'Financeiro' },
-    { value: 'suporte', label: 'Suporte' },
+    { value: 'flex', label: 'Flex' },
+    { value: 'particular', label: 'Particular' },
   ];
 
   const handleChange = event => {
