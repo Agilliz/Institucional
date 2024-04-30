@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import Input from './Formulario/Input'
-import api from '../api'
-import SelectBox from './Formulario/SelectBox'
-import Button from './Button'
-const Formulario = () => {
+import Input from './Input'
+import api from '../../api'
+import SelectBox from './SelectBox'
+import Button from '../Button'
 
+function FormularioColaborador() {
+    
   const [selectedValue, setSelectedValue] = useState('');
 
   const options = [
@@ -39,9 +40,6 @@ const Formulario = () => {
                         </form>
 
                         <div className='flex'>
-
-
-
                             <div className='flex justify-center items-center w-full'>
                                 <Button label="Cadastrar" color="bg-agilzorange" />
                             </div>
@@ -51,4 +49,4 @@ const Formulario = () => {
   )
 }
 
-export default Formulario
+export default FormularioColaborador

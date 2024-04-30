@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrashCan } from "react-icons/fa6";
-import api from "../api";
+import api from "../../api";
 
 const Tabela = () => {
-    const [listaFuncionarios, setListaFuncionarios] = useState([]);
+    const [listaClientes, setListaClientes] = useState([]);
 
      useEffect(() => {
         api.get('funcionario/', {
@@ -13,8 +13,8 @@ const Tabela = () => {
             }
         })
         .then((res) => {
-            setListaFuncionarios(res.data.data.content);
-            console.log(listaFuncionarios);
+            setListaClientes(res.data.data.content);
+            console.log(listaClientes);
         })
         .catch((error) => {
             console.log(error);
@@ -30,27 +30,30 @@ const Tabela = () => {
                             ID
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Nome
+                            Razão social
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Email
+                            Tipo cliente
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Unidade
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {listaFuncionarios.map(func => (
-                        <tr key={func.id} className="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
+                    {listaClientes.map(cliente => (
+                        <tr key={cliente.id} className="odd:bg-white odd:-900 even:bg-gray-50 even:-800 border-b">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                {func.idColaborador}
+                                {cliente.idCliente}
                             </th>
                             <td className="px-6 py-4">
-                                {func.nomeColaborador}
+                                {cliente.nomeCliente}
                             </td>
                             <td className="px-6 py-4">
-                                {func.emailColaborador}
+                                {cliente.emailCliente}
                             </td>
                             <td className="px-6 py-4">
-                                {func.unidade}
+                                {cliente.unidade}
                             </td>
                             <td className="px-6 py-4 flex justify-around">
                             <div href="#" className="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg ">Visualizar</div>

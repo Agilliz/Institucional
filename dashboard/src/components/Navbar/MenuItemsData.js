@@ -31,8 +31,12 @@ export const menuItemsData = [
       icon: <BsInboxes />,
       submenu: [
         {
-          title: 'Cadastro de Colaboradores',
-          urlNavigate: "/cadastro-colaboradores"
+          title: 'Colaboradores',
+          urlNavigate: "/colaboradores"
+        },
+        {
+          title: 'Clientes parceiros',
+          urlNavigate: "/clientes-parceiros"
         }
       ]
     },

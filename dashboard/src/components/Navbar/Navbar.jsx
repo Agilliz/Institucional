@@ -1,7 +1,7 @@
 "use-client"
 
 import React from "react";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { menuItemsData, menuItemsSettingsExit } from "./MenuItemsData";
 import MenuItems from "./MenuItems";
 import { useNavigate } from "react-router-dom";
