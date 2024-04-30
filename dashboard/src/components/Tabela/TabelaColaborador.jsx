@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrashCan } from "react-icons/fa6";
-import api from "../api";
+import api from "../../api";
 
 const Tabela = () => {
     const [listaFuncionarios, setListaFuncionarios] = useState([]);
@@ -22,7 +22,7 @@ const Tabela = () => {
     }, []);
 
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-10">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
@@ -33,7 +33,10 @@ const Tabela = () => {
                             Nome
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Email
+                            Setor
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Unidade
                         </th>
                     </tr>
                 </thead>
@@ -47,7 +50,7 @@ const Tabela = () => {
                                 {func.nomeColaborador}
                             </td>
                             <td className="px-6 py-4">
-                                {func.emailColaborador}
+                                {func.setor}
                             </td>
                             <td className="px-6 py-4">
                                 {func.unidade}

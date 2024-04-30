@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
-import Input from './Formulario/Input'
-import api from '../api'
-import SelectBox from './Formulario/SelectBox'
-import Button from './Button'
+import Input from './Input'
+import api from '../../api'
+import SelectBox from './SelectBox'
+import Button from '../Button'
 const Formulario = () => {
 
   const [selectedValue, setSelectedValue] = useState('');
 
   const options = [
-    { value: 'entregador', label: 'Entregador' },
-    { value: 'coletor', label: 'Coletor' },
-    { value: 'gestor', label: 'Gestor' },
-    { value: 'financeiro', label: 'Financeiro' },
-    { value: 'suporte', label: 'Suporte' },
+    { value: 'flex', label: 'Flex' },
+    { value: 'particular', label: 'Particular' },
   ];
 
   const handleChange = event => {
@@ -39,9 +36,6 @@ const Formulario = () => {
                         </form>
 
                         <div className='flex'>
-
-
-
                             <div className='flex justify-center items-center w-full'>
                                 <Button label="Cadastrar" color="bg-agilzorange" />
                             </div>
