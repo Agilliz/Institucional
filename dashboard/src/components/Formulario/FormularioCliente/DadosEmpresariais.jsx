@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Input from '../Input'
 import api from '../../../api'
 import SelectBox from '../SelectBox'
 import Button from '../../Button'
+import { multiStepContext } from './StepContext'
+
+import { FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
+import { IconContext } from 'react-icons/lib';
 
 const DadosEmpresariais = () => {
 
-  const [selectedValue, setSelectedValue] = useState('');
+
+
+  const { setStep, userData, setUserData } = useContext(multiStepContext);
 
 
   const options = [
@@ -15,30 +22,37 @@ const DadosEmpresariais = () => {
 
   ];
 
-  const handleChange = event => {
-    setSelectedValue(event.target.value);
-  };
+
 
   return (
     <>
-      <div>
+      
         <div className='w-1/2'>
-          <SelectBox label="Tipo cliente" options={options} value={selectedValue} onChange={handleChange} />
+          <SelectBox label="Tipo cliente" options={options} value={userData["tipoCliente"]} onChange={(e) => setUserData({...userData, "tipoCliente": e.target.value})} />
         </div>
 
         <form className='pt-8'>
           <strong className='text-agilzorange'>Dados empresariais</strong>
           <div class="grid md:grid-cols-2 md:gap-6 pt-4">
-            <Input label="Razão social" size="relative z-0 mb-5 group" />
-            <Input label="Nome fantasia" size="relative z-0 mb-5 group" />
-            <Input label="CNPJ" size="relative z-0 mb-5 group" />
+            <Input label="Razão social" size="relative z-0 mb-5 group" value={userData["razaoSocial"]} onChange={(e) => setUserData({...userData, "razaoSocial": e.target.value})} />
+            <Input label="Nome fantasia" size="relative z-0 mb-5 group" value={userData["nomeFantasia"]} onChange={(e) => setUserData({...userData, "nomeFantasia": e.target.value})}/>
+            <Input label="CNPJ" size="relative z-0 mb-5 group" value={userData["cnpj"]} onChange={(e) => setUserData({...userData, "cnpj": e.target.value})}/>
 
-            <Input label="Unidade" />
-            <Input label="Telefone" />
-            <Input label="Hora Corte" />
+            <Input label="Unidade" value={userData["unidade"]} onChange={(e) => setUserData({...userData, "unidade": e.target.value})}/>
+            <Input label="Telefone" value={userData["telefone"]} onChange={(e) => setUserData({...userData, "telefone": e.target.value})}/>
+            <Input label="Hora Corte" value={userData["horaCorte"]} onChange={(e) => setUserData({...userData, "horaCorte": e.target.value})}/>
           </div>
+            <span className='flex justify-between'>
+              <IconContext.Provider value={{ color: "grey", className: "global-class-name" }}>
+                <FaChevronLeft />
+              </IconContext.Provider>
+              
+              <span onClick={()=> setStep(2)}>
+                <FaChevronRight />
+              </span>
+            </span>
         </form>
-      </div>
+      
     </>
   )
 }

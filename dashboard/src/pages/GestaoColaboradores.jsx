@@ -19,7 +19,7 @@ const GestaoColaboradores = () => {
         </div>
         <TabelaColaborador /> 
         <div className='fixed bottom-3.5 right-3.5'>
-        <Button event={() => setModal(true)} label=" + Cadastrar colaborador"/>
+        <Button onClick={() => setModal(true)} label=" + Cadastrar colaborador"/>
         </div>
         <Modal isOpen={openModal} setModalOpen={() => setModal(!openModal)} conteudo={<FormularioColaborador />} />
 

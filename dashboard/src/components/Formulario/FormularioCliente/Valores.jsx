@@ -1,34 +1,47 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { multiStepContext } from './StepContext'
 import Input from '../Input'
-import api from '../../../api'
-import SelectBox from '../SelectBox'
 import Button from '../../Button'
+import { FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
+import { IconContext } from 'react-icons/lib';
 const Valores = () => {
 
-  const [selectedValue, setSelectedValue] = useState('');
+    const { setStep, userData, setUserData, submitData } = useContext(multiStepContext);
 
- 
-  return (
-    <>
-      <div className=''>
+    return (
+        <>
+            
 
-                        <form>
-                            <strong className='text-agilzorange'>Valores</strong>
-                            <div class="grid md:grid-cols-2 md:gap-6 pt-4">
-                                
-                                <Input label="Zona normal" />
-                                <Input label="Zona normal" />
-                            </div>
-                        </form>
+                <form>
+                    <strong className='text-agilzorange'>Valores</strong>
+                    <div class="grid md:grid-cols-2 md:gap-6 pt-4">
 
-                        <div className='flex'>
-                            <div className='flex justify-center items-center w-full'>
-                                <Button label="Salvar" color="bg-agilzorange" />
-                            </div>
-                        </div>
+                        <Input label="Zona normal" value={userData["zonaNormal"]} onChange={(e) => setUserData({...userData, "zonaNormal": e.target.value})} />
+                        <Input label="Zona normal" value={userData["zonaMista"]} onChange={(e) => setUserData({...userData, "zonaMista": e.target.value})} />
                     </div>
-    </>
-  )
+                </form>
+
+                <span className='flex justify-between'>
+                    <span onClick={() => setStep(2)}>
+                        <FaChevronLeft />
+                    </span>
+
+                    <IconContext.Provider value={{ color: "grey", className: "global-class-name" }}>
+                        <span >
+                            <FaChevronRight />
+                        </span>
+                    </IconContext.Provider>
+                </span>
+
+                <div className='flex'>
+                    <div className='flex justify-center items-center w-full'>
+                        <Button label="Salvar" color="bg-agilzorange" onClick={submitData} />
+                    </div>
+                </div>
+            
+        </>
+    )
 }
 
 export default Valores
