@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TabelaClientes from '../components/Tabela/TabelaClientes'
 import Button from '../components/Button'
 import Modal from '../components/Modal';
-import Formulario from '../components/Formulario/FormularioCliente';
+import FormularioCliente from '../components/Formulario/FormularioCliente/DadosEmpresariais';
 function GestaoColaboradores() {
 
     const [openModal, setModal] = useState(false);
@@ -13,7 +13,7 @@ function GestaoColaboradores() {
     <Button event={() => setModal(true)} label=" + Cadastrar cliente"/>
     </div>
 
-    <Modal isOpen={openModal} setModalOpen={() => setModal(!openModal)} conteudo={<Formulario />}/>
+    <Modal isOpen={openModal} setModalOpen={() => setModal(!openModal)} conteudo={<FormularioCliente />}/>
     </>
   )
 }
