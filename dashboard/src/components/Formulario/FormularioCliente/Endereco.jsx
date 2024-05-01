@@ -10,9 +10,9 @@ const Endereco = () => {
  
   return (
     <>
-      <div className='p-6'>
+      <div className=''>
 
-                        <form className='pt-8'>
+                        <form>
                             <strong className='text-agilzorange'>Endereço</strong>
                             <div class="grid md:grid-cols-2 md:gap-6 pt-4">
                                 <Input label="CEP" size="relative z-0 mb-5 group" />

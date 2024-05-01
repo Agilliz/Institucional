@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TabelaClientes from '../components/Tabela/TabelaClientes'
 import Button from '../components/Button'
 import Modal from '../components/Modal';
-import FormularioCliente from '../components/Formulario/FormularioCliente/DadosEmpresariais';
+import FormularioCliente from '../components/Formulario/FormularioCliente/FormularioCliente';
 function GestaoColaboradores() {
 
     const [openModal, setModal] = useState(false);

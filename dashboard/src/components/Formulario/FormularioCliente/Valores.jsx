@@ -10,9 +10,9 @@ const Valores = () => {
  
   return (
     <>
-      <div className='p-6'>
+      <div className=''>
 
-                        <form className='pt-8'>
+                        <form>
                             <strong className='text-agilzorange'>Valores</strong>
                             <div class="grid md:grid-cols-2 md:gap-6 pt-4">
                                 
