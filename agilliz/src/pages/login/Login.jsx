@@ -1,10 +1,35 @@
 import React from "react";
 import styles from "./Login.module.css";
 import fotoFundo from "../../images/foto-fundo-login.svg";
-import Container from "../../components/container/Container";
+import { useState } from "react";
 import fotoForm from "../../images/como-ser-entregador-na-shopee 1.svg";
+import axios from "axios";
+
 
 const Login = () => {
+
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
+  const handleInputChange = (event, setState) => { 
+    setState(event.target.value);
+    console.log(event.target.value);
+  }
+
+  function log(){
+    objetoLogin = {
+      emailColaborador: login,
+      senhaColaborador: senha
+    }
+
+
+    axios.post(`localhost:8080/colaboradores/login`,objetoLogin).then(()=>{
+
+    }).catch(e){
+      console.log(e);
+    }
+  
+  }
+
   return (
     <div
         style={{
@@ -25,7 +50,7 @@ const Login = () => {
         <div className={styles.camposForm}>
           <h1>LOGIN</h1>
           <div className={styles["wave-group"]}>
-            <input required type="text" className={styles.input} />
+            <input required type="text" className={styles.input} onChange={(e) => handleInputChange(e, setLogin)} />
             <span className={styles.bar}></span>
             <label className={styles.label}>
               <span className={styles["label-char"]} style={{ "--index": 0 }}>
@@ -53,7 +78,7 @@ const Login = () => {
           </div>
 
           <div className={styles["wave-group"]}>
-            <input required type="text" className={styles.input} />
+            <input required type="text" className={styles.input} onChange={(e) => handleInputChange(e, setSenha)} />
             <span className={styles.bar}></span>
             <label className={styles.label}>
               <span className={styles["label-char"]} style={{ "--index": 0 }}>
@@ -74,7 +99,7 @@ const Login = () => {
             </label>
           </div>
 
-          <button className={styles["btnLogin"]} type="submit">
+          <button className={styles["btnLogin"]} type="submit"onClick={() => log()} >
             Entrar
           </button>
 
@@ -85,6 +110,11 @@ const Login = () => {
       </div>
     </div>
   );
+
+  
 };
+
+
+
 
 export default Login;
