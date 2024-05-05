@@ -27,20 +27,20 @@ const DadosEmpresariais = () => {
   return (
     <>
       
-        <div className='w-1/2'>
+        {/* <div className='w-1/2'>
           <SelectBox label="Tipo cliente" options={options} value={userData["tipoCliente"]} onChange={(e) => setUserData({...userData, "tipoCliente": e.target.value})} />
-        </div>
+        </div> */}
 
         <form className='pt-8'>
           <strong className='text-agilzorange'>Dados empresariais</strong>
           <div class="grid md:grid-cols-2 md:gap-6 pt-4">
-            <Input label="Razão social" size="relative z-0 mb-5 group" value={userData["razaoSocial"]} onChange={(e) => setUserData({...userData, "razaoSocial": e.target.value})} />
-            <Input label="Nome fantasia" size="relative z-0 mb-5 group" value={userData["nomeFantasia"]} onChange={(e) => setUserData({...userData, "nomeFantasia": e.target.value})}/>
-            <Input label="CNPJ" size="relative z-0 mb-5 group" value={userData["cnpj"]} onChange={(e) => setUserData({...userData, "cnpj": e.target.value})}/>
+            {/* <Input label="Razão social" size="relative z-0 mb-5 group" value={userData["razaoSocial"]} onChange={(e) => setUserData({...userData, "razaoSocial": e.target.value})} />
+            <Input label="Nome fantasia" size="relative z-0 mb-5 group" value={userData["nomeFantasia"]} onChange={(e) => setUserData({...userData, "nomeFantasia": e.target.value})}/> */}
+            <Input label="Digitos Verificadores" size="relative z-0 mb-5 group" value={userData["digitosVerificadores"]} onChange={(e) => setUserData({...userData, "digitosVerificadores": e.target.value})}/>
 
-            <Input label="Unidade" value={userData["unidade"]} onChange={(e) => setUserData({...userData, "unidade": e.target.value})}/>
-            <Input label="Telefone" value={userData["telefone"]} onChange={(e) => setUserData({...userData, "telefone": e.target.value})}/>
-            <Input label="Hora Corte" value={userData["horaCorte"]} onChange={(e) => setUserData({...userData, "horaCorte": e.target.value})}/>
+            {/* <Input label="Unidade" value={userData["unidade"]} onChange={(e) => setUserData({...userData, "unidade": e.target.value})}/> */}
+            <Input label="Telefone" value={userData["telefoneUnidade"]} onChange={(e) => setUserData({...userData, "telefoneUnidade": e.target.value})}/>
+            {/* <Input label="Hora Corte" value={userData["horaCorte"]} onChange={(e) => setUserData({...userData, "horaCorte": e.target.value})}/> */}
           </div>
             <span className='flex justify-between'>
               <IconContext.Provider value={{ color: "grey", className: "global-class-name" }}>

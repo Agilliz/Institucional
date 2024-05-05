@@ -18,7 +18,7 @@ const Valores = () => {
                     <div class="grid md:grid-cols-2 md:gap-6 pt-4">
 
                         <Input label="Zona normal" value={userData["zonaNormal"]} onChange={(e) => setUserData({...userData, "zonaNormal": e.target.value})} />
-                        <Input label="Zona normal" value={userData["zonaMista"]} onChange={(e) => setUserData({...userData, "zonaMista": e.target.value})} />
+                        <Input label="Zona nova" value={userData["zonaNova"]} onChange={(e) => setUserData({...userData, "zonaNova": e.target.value})} />
                     </div>
                 </form>
 
