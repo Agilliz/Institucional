@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TabelaColaborador from '../components/Tabela/TabelaColaborador';
 import Button from '../components/Button'
 import Modal from '../components/Modal';
-import FormularioColaborador from '../components/Formulario/FormularioColaborador';
+import FormularioColaborador from '../components/Formulario/FormularioColaborador/FormularioColaborador';
 import Input from '../components/Formulario/Input';
 const GestaoColaboradores = () => {
   

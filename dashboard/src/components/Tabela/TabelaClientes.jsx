@@ -19,7 +19,7 @@ const Tabela = () => {
         .catch((error) => {
             console.log(error);
         });
-    }, []);
+    }, [listaClientes]);
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
