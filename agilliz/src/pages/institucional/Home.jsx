@@ -8,16 +8,17 @@ import numero1ModOperacoes from "../../images/svgNumero1Mod.svg";
 import segundaImagemModo from "../../images/segunda-imagem-modo.svg";
 import vetorSeta1 from "../../images/vetor-seta-1.svg";
 import vetorSeta2 from "../../images/vetor-seta-2.svg";
-import maoCelular from "../../images/maoCelular.svg";
+import maoCelular from "../../images/maeMadeira.svg"
 import Etapa from "../../components/etapaModoOperacao/EtapaModoOperacao";
 import numero3ModOperacoes from "../../images/svgNumero3Mod.svg";
-import rapazMoto from "../../images/rapazMoto.svg";
+import rapazMoto from "../../images/rapazMoto.svg"; 
 import numero2ModOperacoes from "../../images/svgNumero2Mod.svg";
 import mocaMoto from "../../images/mocaNaMoto.svg";
 import caminhaoBeneficios from "../../images/svgCaminhaoBeneficios.svg";
 import ContainerBeneficios from "../../components/containerBeneficios/containerBeneficios";
 import casaBeneficios from "../../images/casaBeneficios.svg";
 import localBeneficios from "../../images/localBeneficios.svg";
+import { Fade } from "react-awesome-reveal";
 
 import Footer from "../../components/footer/Footer";
 
@@ -263,16 +264,20 @@ function Institucional() {
                 </div>
               }
               largura={50}
+              
               ladoEsquerdo={
+                
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    textAlign: "center"
+                    textAlign: "center",
+                    width: "100%"
                   }}
                 >
+                  <Fade>
                   <Etapa
                     texto={`<span>Com nosso aplicativo móvel, o</span>
                  <span>coletor pode escanear facilmente</span>
@@ -280,18 +285,20 @@ function Institucional() {
                  <span>de forma rápida e prática. </span>`}
                     svgNUmeroEtapa={numero1ModOperacoes}
                     etapa={"Coleta"}
-                    margem={"25%"}
                   />
+                  </Fade>
 
-                  <div>
+                  
+                    <Fade>
                     <ImagemModo
                       srcParam={segundaImagemModo}
                       altParam={
                         "Imagem de moça carregando pacotes com celular na mão"
                       }
-                      maxWidth={"80%"}
+                      size={20}
                     />
-
+                    </Fade>
+                      <Fade>
                     <Etapa
                       texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
@@ -304,7 +311,8 @@ function Institucional() {
                       etapa={"Entregas"}
                       margem={"10%"}
                     />
-                  </div>
+                    </Fade>
+                  
                 </div>
               }
               ladoDireito={
@@ -316,13 +324,17 @@ function Institucional() {
                     alignItems: "center",
                     textAlign: "center",
                     marginBottom: "10%",
+                    width: "100%"
                   }}
                 >
+                  <Fade>
                   <ImagemModo
                     srcParam={rapazMoto}
                     altParam={"Rapaz andando de moto com rotas ao fundo"}
-                    maxWidth={"80%"}
+                   size={30}
                   />
+                  </Fade>
+                  <Fade>
                   <Etapa
                     texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
@@ -333,16 +345,18 @@ function Institucional() {
                         <span>pedido está a caminho.</span>`}
                     svgNUmeroEtapa={numero2ModOperacoes}
                     etapa={"Gestão e Preparo"}
-                    margem={"50%"}
                   />
-
+                  </Fade>
+                  <Fade>
                   <ImagemModo
                     srcParam={mocaMoto}
                     altParam={
                       "Moça apoiada em uma moto com uma imagem de rota ao fundo"
                     }
-                    maxWidth={"60%"}
+                    size={25}
+                    
                   />
+                  </Fade>
                 </div>
               }
             />
@@ -633,6 +647,8 @@ function Institucional() {
   );
 
 }
+
+
 
 
 

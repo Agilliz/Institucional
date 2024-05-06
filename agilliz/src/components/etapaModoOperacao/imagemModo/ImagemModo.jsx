@@ -1,14 +1,24 @@
 import React from "react";
 
-const ImagemModo = ({ srcParam, altParam, maxWidth}) => {
+const ImagemModo = ({ srcParam, altParam, size}) => {
   return (
-    <img
+    <div style={{
+      display: "flex",
+      width: "50%",
+      justifyContent: "center",
+      alignItems: "center"
+    }}>
+       <img
       src={srcParam}
       alt={altParam}
       style={{
-        maxWidth: `${maxWidth}`
+        minWidth: `${size}` + "vw",
+        marginLeft: "100%",
+        margin: "5"
       }}
     />
+    </div>
+   
   );
 };
 
