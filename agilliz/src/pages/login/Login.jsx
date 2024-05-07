@@ -13,16 +13,18 @@ const Login = () => {
     console.log(event.target.value);
   };
 
-  function log() {
+  async function log() {
     let credentials = {
-      emailColaborador: login,
-      senhaColaborador: senha,
+      email: login,
+      senha: senha,
     };
 
     axios
-      .post(`localhost:8080/colaboradores/login`, credentials)
-      .then(() => {
-        console.log(credentials.emailColaborador);
+      .post(`http://localhost:8080/funcionario/login`, credentials)
+      .then((response) => {
+        const{data} = response;
+
+        sessionStorage.setItem("tk", data.token)
       })
       .catch((error) => {
         console.log(error);

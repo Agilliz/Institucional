@@ -25,7 +25,7 @@ const Etapa = ({ texto, etapa, svgNUmeroEtapa}) => {
           <img src={svgNUmeroEtapa} />
         </div>
         <div>
-          <h1 style={{width: "80%", fontSize: "2rem", fontWeight: "700", color: "#DE6600"}}>{etapa}</h1>
+          <h1 style={{width: "auto", fontSize: "2rem", fontWeight: "700", color: "#DE6600"}}>{etapa}</h1>
         </div>
       </div>
       <div style={{fontSize: "20px", fontWeight: "400"}} dangerouslySetInnerHTML={{ __html: textoLimpo }}>

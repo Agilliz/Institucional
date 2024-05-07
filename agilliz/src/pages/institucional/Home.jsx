@@ -8,7 +8,8 @@ import numero1ModOperacoes from "../../images/svgNumero1Mod.svg";
 import segundaImagemModo from "../../images/segunda-imagem-modo.svg";
 import vetorSeta1 from "../../images/vetor-seta-1.svg";
 import vetorSeta2 from "../../images/vetor-seta-2.svg";
-import maoCelular from "../../images/maeMadeira.svg"
+// import maoCelular from "../../images/maeMadeira.svg"
+import mao from "../../images/maoViti.png"
 import Etapa from "../../components/etapaModoOperacao/EtapaModoOperacao";
 import numero3ModOperacoes from "../../images/svgNumero3Mod.svg";
 import rapazMoto from "../../images/rapazMoto.svg"; 
@@ -19,12 +20,15 @@ import ContainerBeneficios from "../../components/containerBeneficios/containerB
 import casaBeneficios from "../../images/casaBeneficios.svg";
 import localBeneficios from "../../images/localBeneficios.svg";
 import { Fade } from "react-awesome-reveal";
-
+import React, { useState } from 'react';
 import Footer from "../../components/footer/Footer";
 
 function Institucional() {
-  return (
 
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    
     <div className="App">
       <div className="h-screen">
         <div className="flex">
@@ -50,15 +54,15 @@ function Institucional() {
                     }}
                   >
                     <h1>
-                      O <span style={{ color: "#DE6600" }}>Poder</span> da
+                      O <b><span style={{ color: "#DE6600", fontWeight: "500" }}>Poder</span></b> da
                       logística na palma da
                     </h1>
                     <h1>
-                      sua <span style={{ color: "#DE6600" }}>Mão </span> e ao
+                      sua <b><span style={{ color: "#DE6600", fontWeight: "500"  }}>Mão </span></b> e ao
                       dispor da sua
                     </h1>
                     <h1>
-                      <span style={{ color: "#DE6600"}}>Empresa</span>
+                      <b><span style={{ color: "#DE6600", fontWeight: "500" }}>Empresa</span></b>
                     </h1>
                     <button
                       style={{
@@ -78,22 +82,14 @@ function Institucional() {
               }
               ladoDireito={
                 <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src={maoCelular}
-                    alt="Mão de madeira usando celular com logo da aplicação"
-                    style={{
-                      maxWidth: "98%",
-                      maxHeight: "98%",
-                      marginLeft: "4%",
-                      filter: "drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5))",
-                    }}
-                  />
+                
+              >
+              
+                <img src={mao} alt="Mão segurando celular com logo da empresa (Lebre laranja)"  style={{
+                  
+                  maxWidth: "40vw",
+                  
+                }}/>
                 </div>
               }
             />
@@ -114,14 +110,18 @@ function Institucional() {
                       fontWeight: "600",
                     }}
                   >
+                    <b>
                     <span
                       style={{
                         borderBottom: "4px solid #DE6600",
                         borderRadius: "3px",
+                        fontWeight: "700"
                       }}
                     >
                       SOBRE
-                    </span>{" "}
+                    </span>
+                    </b>
+                    {" "}
                     NÓS
                   </h1>
                 </div>
@@ -195,13 +195,13 @@ function Institucional() {
               style={{
                 width: "50%",
                 position: "absolute",
-                transform: "translate(68%, 335%)",
+                transform: "translate(70%, 283%)",
                 zIndex: 1,
               }}
             >
               <img
                 src={vetorSeta1}
-                style={{ width: "60%", zIndex: "-10" }}
+                style={{ width: "57%", zIndex: "-10" }}
               ></img>
             </div>
 
@@ -209,7 +209,7 @@ function Institucional() {
               style={{
                 width: "49%",
                 position: "absolute",
-                transform: "translate(71%, 661%)",
+                transform: "translate(71%, 640%)",
                 zIndex: 1,
               }}
             >
@@ -253,6 +253,7 @@ function Institucional() {
                           style={{
                             borderBottom: "4px solid #DE6600",
                             borderRadius: "3px",
+                            fontWeight: "700"
                           }}
                         >
                           MODO
@@ -277,7 +278,7 @@ function Institucional() {
                     width: "100%"
                   }}
                 >
-                  <Fade>
+            <Fade cascade duration={1000}>
                   <Etapa
                     texto={`<span>Com nosso aplicativo móvel, o</span>
                  <span>coletor pode escanear facilmente</span>
@@ -289,7 +290,7 @@ function Institucional() {
                   </Fade>
 
                   
-                    <Fade>
+              <Fade cascade duration={1000}>
                     <ImagemModo
                       srcParam={segundaImagemModo}
                       altParam={
@@ -298,7 +299,7 @@ function Institucional() {
                       size={20}
                     />
                     </Fade>
-                      <Fade>
+                <Fade cascade duration={1000}>
                     <Etapa
                       texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
@@ -327,27 +328,27 @@ function Institucional() {
                     width: "100%"
                   }}
                 >
-                  <Fade>
+            <Fade cascade duration={1000}>
                   <ImagemModo
                     srcParam={rapazMoto}
                     altParam={"Rapaz andando de moto com rotas ao fundo"}
                    size={30}
                   />
                   </Fade>
-                  <Fade>
+            <Fade cascade duration={1000}>
                   <Etapa
-                    texto={`<span>Os entregadores selecionam as</span>
-                        <span>rotas de entrega de sua preferência</span>
-                        <span>e automaticamente gera uma rota </span>
-                        <span>otimziada. Assim que a rota é</span>
-                        <span>definida, o cliente consumidor é</span>
-                        <span>prontamente notificado de que seu</span>
-                        <span>pedido está a caminho.</span>`}
+                    texto={`<span>Após a coleta, os pacotes serão</span>
+                        <span>prontamente reconhecidos em</span>
+                        <span>nosso sistema, permitindo a criação</span>
+                        <span>de zonas de entrega personalizadas</span>
+                        <span>com base nas demandas específicas</span>
+                        <span>atendidas pela sua empresa. Isso</span>
+                        <span>otimiza o processo de distribuição.</span>`}
                     svgNUmeroEtapa={numero2ModOperacoes}
                     etapa={"Gestão e Preparo"}
                   />
                   </Fade>
-                  <Fade>
+            <Fade cascade duration={1000}>
                   <ImagemModo
                     srcParam={mocaMoto}
                     altParam={
@@ -514,10 +515,10 @@ function Institucional() {
             altura={"4vh"}
             />
             <Container
-              altura={"78vh"}
+              altura={"88vh"}
               largura={100}
               tituloSessao={
-                <div>
+                <div >
                   <h1
                     style={{
                       fontSize: "32px",
@@ -530,6 +531,7 @@ function Institucional() {
                       style={{
                         borderBottom: "4px solid #DE6600",
                         borderRadius: "3px",
+                        fontWeight: "700"
                       }}
                     >
                       Envie -
