@@ -6,7 +6,7 @@ import Modal from '../Modal';
 import FormularioCliente from '../Formulario/FormularioCliente/FormularioCliente';
 const Tabela = () => {
     const [openModal, setModal] = useState(false);
-    const [cliente, setCliente] = useState();
+    const [cliente, setCliente] = useState({});
     const [listaClientes, setListaClientes] = useState([]);
 
      useEffect(() => {
@@ -97,7 +97,7 @@ const Tabela = () => {
                     ))}
                 </tbody>
             </table>
-            <Modal conteudo={cliente} isOpen={openModal} setModalOpen={() => setModal(!openModal)}/>
+            <Modal conteudo={cliente} cliente={cliente} isOpen={openModal} setModalOpen={() => setModal(!openModal)}/>
 
         </div>
     );

@@ -18,8 +18,6 @@ export const multiStepContext = React.createContext();
     }
 
     function atualizarCliente(){
-      console.log('to atualizando tio'+JSON.stringify(conteudo))
-
       api.put(`unidade/alterar/${userData.idUnidade}`,{
             rua: userData.rua,
             cep: userData.cep,
