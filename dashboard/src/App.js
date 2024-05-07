@@ -2,6 +2,7 @@ import React from "react";
 import Rotas from "./routes";
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header';
+import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
         <Header />
 
         <Rotas />
-        <ToastContainer />
       </div>
     </div>
+    <ToastContainer />
     </>
   );
 }
