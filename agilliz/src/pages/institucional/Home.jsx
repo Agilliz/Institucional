@@ -22,6 +22,7 @@ import localBeneficios from "../../images/localBeneficios.svg";
 import { Fade } from "react-awesome-reveal";
 import React, { useState } from 'react';
 import Footer from "../../components/footer/Footer";
+import styles from "../institucional/Home.module.css"
 
 function Institucional() {
 
@@ -85,7 +86,7 @@ function Institucional() {
                 
               >
               
-                <img src={mao} alt="Mão segurando celular com logo da empresa (Lebre laranja)"  style={{
+                <img src={mao} alt="Mão segurando celular com logo da empresa (Lebre laranja)" className={styles.MaoCelular} style={{
                   
                   maxWidth: "40vw",
                   
@@ -362,6 +363,7 @@ function Institucional() {
               }
             />
 
+              <Fade>
             <Container
               altura={"80vh"}
               corFundo={"#F4F6F9"}
@@ -481,6 +483,7 @@ function Institucional() {
                 </>
               }
             />
+            </Fade>
 
             <Container
               altura={"34vh"}
