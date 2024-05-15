@@ -1,6 +1,6 @@
 import { MdNotifications } from "react-icons/md";
 import { PiUserRectangleFill } from "react-icons/pi";
-
+import { FaCircleArrowLeft } from "react-icons/fa6";
 const Header = () => {
 
 
@@ -8,6 +8,9 @@ const Header = () => {
 
 
     <header className='h-24 w-full flex'>
+      <span className='fixed top-10 right'>
+      <FaCircleArrowLeft />
+      </span>
       <div className='flex flex-col justify-center items-center w-1/2'>
         <strong>Agiliz consulting</strong>
       </div>
