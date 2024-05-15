@@ -32,6 +32,8 @@ function FormularioCliente({ initialData }) {
             return <Endereco /> 
             case 3: 
             return <Valores />
+            default:
+            break;
         }
     }
 

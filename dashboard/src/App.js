@@ -12,7 +12,6 @@ function App() {
       <Navbar />
       <div className='w-full'>
         <Header />
-
         <Rotas />
       </div>
     </div>

@@ -3,11 +3,15 @@ import { FaTrashCan } from "react-icons/fa6";
 import api from "../../api";
 import { toast } from 'react-toastify';
 import Modal from '../Modal';
-import FormularioCliente from '../Formulario/FormularioCliente/FormularioCliente';
+
 const Tabela = () => {
     const [openModal, setModal] = useState(false);
     const [cliente, setCliente] = useState({});
     const [listaClientes, setListaClientes] = useState([]);
+
+    console.log('cliente' + cliente );
+    console.log('listaCliente' + listaClientes);
+
 
      useEffect(() => {
         api.get('unidade/', {
@@ -18,7 +22,7 @@ const Tabela = () => {
         })
         .then((res) => {
             setListaClientes(res.data.data.content);
-            console.log(listaClientes);
+            console.log( listaClientes);
         })
         .catch((error) => {
             console.log(error);
@@ -26,6 +30,9 @@ const Tabela = () => {
     }, []);
 
     function deletarCliente(idUnidade){
+
+        
+
         api.delete(`unidade/deletar/${idUnidade}`, {
             auth: {
                 username: 'agilizDev',
@@ -38,6 +45,8 @@ const Tabela = () => {
         .catch(() => {
             toast.error('Erro ao deletar o cliente');
         });
+
+        window.location.reload();
     }
 
     function alterarCliente(unidade){
@@ -64,10 +73,6 @@ const Tabela = () => {
                         <th scope="col" className="px-6 py-3">
                             TELEFONE
                         </th>
-                        
-                        <th scope="col" className="px-6 py-3">
-                            CNPJ
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,11 +88,9 @@ const Tabela = () => {
                                 {cliente.numero}
                             </td>
                             <td className="px-6 py-4">
-                                {cliente.telefone}
+                                {cliente.telefoneUnidade}
                             </td>
-                            <td className="px-6 py-4">
-                                {cliente.cnpj}
-                            </td>
+
                             <td className="px-6 py-4 flex justify-around">
                             <div href="#" className="font-medium text-blue-600  hover:underline flex justify-center items-center rounded-lg ">Visualizar</div>
                                 <div href="#" className="font-medium text-white bg-orange-500 hover:underline flex justify-center items-center rounded-lg " onClick={() => alterarCliente(cliente)}><h2 className='p-2'>Alterar</h2></div>
@@ -97,7 +100,7 @@ const Tabela = () => {
                     ))}
                 </tbody>
             </table>
-            <Modal conteudo={cliente} cliente={cliente} isOpen={openModal} setModalOpen={() => setModal(!openModal)}/>
+            <Modal setModal={setModal} conteudo={cliente} cliente={cliente} isOpen={openModal} setModalOpen={() => setModal(!openModal)}/>
 
         </div>
     );

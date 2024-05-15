@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import api from '../../../api';
 import FormularioCliente from './FormularioCliente';
-import transformarData from '../../../utils/globals';
 import { toast } from 'react-toastify';
 export const multiStepContext = React.createContext();
 
- const StepContext = ({conteudo}) => {
+ const StepContext = ({conteudo, setModal}) => {
     const [currentStep, setStep] = useState(1);
     const [userData, setUserData] = useState(conteudo);
     const [finalData, setFinalData] = useState([]);  
@@ -15,6 +14,12 @@ export const multiStepContext = React.createContext();
 
       if(!conteudo) cadastrarCliente();
       else atualizarCliente();
+
+      setModal(false);
+
+      window.location.reload();
+
+      
     }
 
     function atualizarCliente(){
@@ -36,7 +41,7 @@ export const multiStepContext = React.createContext();
             console.log(res);
         })
         .catch((error) => {
-            toast.error('burrinho');
+            toast.error('Falha ao atualizar');
             console.log(error);
         })
     }
@@ -56,15 +61,19 @@ export const multiStepContext = React.createContext();
         }
       })
       .then((res) => {
-          toast.success('sucesso total');
+          toast.success('Usuário cadastrado!');
       })
       .catch((error) => {
-          toast.error('burrinho');
+          toast.error('Não foi possível realizar o cadastro');
       })
       .finally(() => {
         setUserData([]);
         setStep(1);
       });
+
+      setModal(false);
+
+
     }
 
     return (

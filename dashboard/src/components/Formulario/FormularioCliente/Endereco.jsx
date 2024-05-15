@@ -4,6 +4,8 @@ import Input from '../Input'
 import Button from '../../Button';
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
+import { IconContext } from 'react-icons/lib';
+
 
 const Endereco = () => {
 
@@ -33,7 +35,11 @@ const Endereco = () => {
             </span>
 
             <span onClick={() => setStep(3)}>
-              <FaChevronRight />
+            <IconContext.Provider value={{ color: "grey", className: "global-class-name" }}>
+                        <span>
+                            <FaChevronRight />
+                        </span>
+            </IconContext.Provider>
             </span>
 
             

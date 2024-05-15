@@ -15,11 +15,8 @@ const Valores = () => {
 
                 <form>
                     <strong className='text-agilzorange'>Valores</strong>
-                    <div class="grid md:grid-cols-2 md:gap-6 pt-4">
-
-                        {/* <Input label="Zona normal" value={userData["zonaNormal"]} onChange={(e) => setUserData({...userData, "zonaNormal": e.target.value})} />
-                        <Input label="Zona nova" value={userData["zonaNova"]} onChange={(e) => setUserData({...userData, "zonaNova": e.target.value})} /> */}
-                    </div>
+                        <div class="grid md:grid-cols-2 md:gap-6 pt-4">
+                      </div>
                 </form>
 
                 <span className='flex justify-between'>
@@ -28,7 +25,7 @@ const Valores = () => {
                     </span>
 
                     <IconContext.Provider value={{ color: "grey", className: "global-class-name" }}>
-                        <span >
+                        <span>
                             <FaChevronRight />
                         </span>
                     </IconContext.Provider>

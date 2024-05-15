@@ -4,7 +4,7 @@ import Home from './pages/Home.jsx';
 import Login from './pages/Login';
 import GestaoClientes from './pages/GestaoClientes.jsx';
 import GestaoColaboradores from './pages/GestaoColaboradores.jsx';
-
+import Modal from './components/Modal.jsx';
 function Router() {
   return (
     <Routes>
@@ -12,6 +12,7 @@ function Router() {
         <Route path={"/login"} element={<Login />} />
         <Route path={"/colaboradores"} element={<GestaoColaboradores />} />
         <Route path={"/clientes-parceiros"} element={<GestaoClientes />} />
+        <Route path={"/modal"} element={<Modal />} />
     </Routes>
   );
 }
