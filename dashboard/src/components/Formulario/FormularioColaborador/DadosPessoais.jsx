@@ -20,13 +20,9 @@ const DadosPessoais = () => {
 
   return (
     <>
-      
-        <div className='w-1/2'>
-          <SelectBox label="Tipo cliente" options={options} value={userData["tipoCliente"]} onChange={(e) => setUserData({...userData, "tipoCliente": e.target.value})} />
-        </div>
 
         <form className='pt-8'>
-          <strong className='text-agilzorange'>Dados empresariais</strong>
+          <strong className='text-agilzorange'>Dados pessoais</strong>
           <div class="grid md:grid-cols-2 md:gap-6 pt-4">
             <Input label="Razão social" size="relative z-0 mb-5 group" value={userData["razaoSocial"]} onChange={(e) => setUserData({...userData, "razaoSocial": e.target.value})} />
             <Input label="Nome fantasia" size="relative z-0 mb-5 group" value={userData["nomeFantasia"]} onChange={(e) => setUserData({...userData, "nomeFantasia": e.target.value})}/>

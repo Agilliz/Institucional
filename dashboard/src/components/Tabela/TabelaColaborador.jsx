@@ -14,10 +14,10 @@ const Tabela = () => {
         })
         .then((res) => {
             setListaFuncionarios(res.data.data.content);
-            console.log(listaFuncionarios);
+            console.log('lista func' + listaFuncionarios);
         })
         .catch((error) => {
-            console.log(error);
+            console.log('teste : ' + error);
         });
     }, []);
 
