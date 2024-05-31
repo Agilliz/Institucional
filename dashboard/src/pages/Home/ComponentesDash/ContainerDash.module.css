@@ -1,4 +1,9 @@
 /* ContainerDash.module.css */
+:root{
+  --tamanho-container: 35vh;
+}
+
+
 .fonte {
     display: flex;
     justify-content: center;
@@ -10,7 +15,7 @@
   }
   
   .container {
-    min-height: 35vh;
+    min-height: var(--tamanho-container);
     max-height: auto;
     border-radius: 10px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.389);

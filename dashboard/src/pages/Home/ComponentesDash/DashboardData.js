@@ -97,88 +97,49 @@ export function inicializaGraficos() {
 
     // Gráfico pie faturamento
    // Gráfico pie faturamento
-const graficoFaturamentoOptions = {
-    series: [20, 30, 50],
+   const graficoFaturamentoOptions = {
+    series: [{
+      name: 'Faturamento',
+      data: [40, 20, 20]
+    }],
     chart: {
-        type: 'donut',
-        width: '70%',
-        dropShadow: {
-            enabled: true,
-            color: '#000',
-            top: 5,
-            left: 0,
-            blur: 3,
-            opacity: 0.1,
-           
-        },
-        offsetX: 85, // Center the chart initially
-    },
-    responsive: [
-        {
-            breakpoint: 768,
-            options: {
-                chart: {
-                    width: '90%',
-                    height: 300,
-                    offsetX: 100, // Reset the offset
-                },
-                legend: {
-                    position: 'right',
-                    offsetY: 100
-                }
-            }
-        },
-        {
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: '100%',
-                    height: 300,
-                    offsetX: 0, // Reset the offset
-                },
-                legend: {
-                    position: 'right',
-                    offsetY: -50
-                }
-            }
-        }
-    ],
-    colors: ['#DE6600', '#FFF6DF', '#2C2D5B'],
-    labels: ['Lucro Bruto', 'Lucro Líquido', 'Taxas e Impostos'],
-    dataLabels: {
-        enabled: false
+      type: 'bar',
+      height: 150
     },
     plotOptions: {
-        pie: {
-            expandOnClick: false,
-            donut: {
-                size: '80%'
-            }
+      bar: {
+        borderRadius: 4,
+        borderRadiusApplication: 'end',
+        horizontal: true,
+        columnWidth: "25%"
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    colors: ['#FF5733'], // Cor das barras
+    xaxis: {
+      categories: ["Lucro Bruto", "Lucro Líquido", "Taxas e Impostos"],
+      labels: {
+        style: {
+           // Cor das labels do eixo x
+          fontSize: '12px',
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          fontWeight: 400,
         }
+      }
     },
-    stroke: {
-        colors: ['#DE6600', '#FFF6DF', '#2C2D5B'],
-        width: 1,
-        dashArray: 4
-    },
-    states: {
-        hover: {
-            filter: {
-                type: 'darken',
-                value: 0.8
-            }
+    yaxis: {
+      labels: {
+        style: {
+           // Cor das labels do eixo y
+          fontSize: '12px',
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          fontWeight: 400,
         }
-    },
-    legend: {
-        fontSize: '16px',
-        markers: {
-            width: 15,
-            height: 15,
-            radius: 2
-        },
-        offsetY: 25
+      }
     }
-};
+  };
 
 
     const graficoFaturamento = new ApexCharts(document.querySelector("#chart-pie-faturamento"), graficoFaturamentoOptions);
