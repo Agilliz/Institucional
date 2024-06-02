@@ -6,98 +6,79 @@ import ContainerDash from "./ComponentesDash/ContainerDash";
 import { inicializaGraficos } from "./ComponentesDash/DashboardData";
 import ContainerData from "./ComponentesDash/ContainerData";
 import Button from "./ComponentesDash/button";
-import ContainerZona from "./ComponentesDash/ContainerMapaZona"
+import ContainerZona from "./ComponentesDash/ContainerMapaZona";
 
 function Home() {
-    useEffect(() => {
-        const graficos = inicializaGraficos();
+  useEffect(() => {
+    const graficos = inicializaGraficos();
 
-        return () => {
-            graficos.forEach((grafico) => grafico.destroy());
-        };
-    }, []);
+    return () => {
+      graficos.forEach((grafico) => grafico.destroy());
+    };
+  }, []);
 
-    const porcentagemLucroRef = useRef(null);
+  return (
+    <>
+      <div className="pl-4 pt-4 w-full">
+        <Titulo
+          titulo="Dashboard financeiro"
+          componente={<PeriodoCalendario />}
+        />
+        <Modal />
+      </div>
 
-    useEffect(() => {
-        if (document.querySelector("#porcentagemLucro")) {
-            document.querySelector("#porcentagemLucro").innerHTML = "50%";
-        }
-    }, []);
+      <div className="w-full h-auto flex flex-col">
+        <div className="flex w-full">
+          <div className="w-1/2 flex justify-center items-center p-3 pb-0 flex-col mb-2">
+            <ContainerDash
+              titulo="Faturamento Total"
+              idChart="chart-pie-faturamento"
+            />
 
-    return (
-        <>
-            <div className="pl-4 pt-4 w-full">
-                <Titulo
-                    titulo="Dashboard financeiro"
-                    componente={<PeriodoCalendario />}
-                />
-                <Modal />
+            <div className="flex justify-between items-center w-full mt-1 mb-1">
+              <ContainerData titulo={"Maior Retorno"} valor={"Cliente"} />
+              <ContainerData titulo={"Menor Retorno"} valor={"Cliente"} />
             </div>
+            <div className="flex justify-between items-center w-full mt-1 mb-1">
+              <ContainerZona titulo={"Área Maior Retorno"} valor={"Mauá"} />
+              <ContainerZona titulo={"Área Menor Retorno"} valor={"Itaquera"} />
+            </div>
+          </div>
 
-            <div className="w-full h-auto flex flex-col">
-                <div className="flex w-full">
-                    <div className="w-1/2 flex justify-center items-center p-3 flex-col mb-2">
-                        <ContainerDash
-                            titulo="Faturamento Total"
-                            idChart="chart-pie-faturamento"
-                            
-                        />
-                       
-                        <div className="flex justify-between items-center w-full mt-1 mb-1">
-                            <ContainerData titulo={"Maior Retorno"} valor={"Cliente"} />
-                            <ContainerData titulo={"Menor Retorno"} valor={"Cliente"} />
-                            
-                        </div>
-                        <div className="flex justify-between items-center w-full mt-1 mb-1">
-                        <ContainerZona titulo={"Área Maior Retorno"} valor={"Mauá"}/>    
-                        <ContainerZona titulo={"Área Menor Retorno"} valor={"Itaquera"}/>    
-                        </div>
-                                      
-                      
-                    </div>
-
-                    <div className="w-1/2 flex justify-center items-center p-3 pb-6 flex-col">
-                        <ContainerDash
-                            titulo="Custo Operacional"
-                            idChart="chart-linha-custo"
-                        />
-                        <div className="flex justify-center items-center w-full pt-0">
-                            <div className="flex justify-center items-center w-full flex-col">
-                                <div className="flex justify-between items-center w-full pt-2">
-                                    <ContainerData titulo={"Ticket Médio"} valor={"R$ 700,00"} />
-                                    <ContainerData
-                                        titulo={"Despesas Variáveis"}
-                                        valor={"R$ 300,00"}
-                                    />
-                                </div>
-                                <div className="flex justify-between items-center w-full pt-0.5">
-                                    <ContainerData
-                                        titulo={"Despesas Fixas"}
-                                        valor={"R$ 27.000,00"}
-                                    />
-                                    <ContainerData titulo={"Impostos"} valor={"R$ 2.700,00"} />
-                                </div>
-                                <div className="flex justify-between items-center w-full pt-0.5">
-                                    <ContainerData titulo={"Taxas"} valor={"R$ 200,00"} />
-                                    <div className="w-1/2 flex justify-center items-center">
-                                        <Button />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <div className="w-1/2 flex justify-center items-center p-3 pb-2 flex-col">
+            <ContainerDash
+              titulo="Custo Operacional"
+              idChart="chart-linha-custo"
+            />
+            <div className="flex justify-center items-center w-full pt-0">
+              <div className="flex justify-center items-center w-full flex-col">
+                <div className="flex justify-between items-center w-full pt-2">
+                  <ContainerData titulo={"Ticket Médio"} valor={"R$ 700,00"} />
+                  <ContainerData
+                    titulo={"Despesas Variáveis"}
+                    valor={"R$ 300,00"}
+                  />
                 </div>
+                <div className="flex justify-between items-center w-full pt-0.5">
+                  <ContainerData
+                    titulo={"Despesas Fixas"}
+                    valor={"R$ 27.000,00"}
+                  />
+                  <ContainerData titulo={"Impostos"} valor={"R$ 2.700,00"} />
+                </div>
+                <div className="flex justify-between items-center w-full pt-0.5">
+                  <ContainerData titulo={"Taxas"} valor={"R$ 200,00"} />
+                  <div className="w-1/2 flex justify-center items-center">
+                    <Button />
+                  </div>
+                </div>
+              </div>
             </div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Home;
-
-//
-//
-// <ContainerData titulo={"Taxas"} valor={"R$ 200,00"} />
-
-//
-// <ContainerData titulo={"Impostos"} valor={"R$ 2.700,00"} />
