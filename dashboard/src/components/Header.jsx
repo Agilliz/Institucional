@@ -7,7 +7,7 @@ const Header = () => {
   return (
 
 
-    <header className='h-24 w-full flex'>
+    <header className='h-20 w-full flex'>
       <span className='fixed top-10 right'>
       <FaCircleArrowLeft />
       </span>

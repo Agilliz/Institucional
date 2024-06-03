@@ -4,7 +4,7 @@ export function inicializaGraficos() {
     // Gráfico linha custos
     const graficoCustosOptions = {
         chart: {
-            height: 150,
+            height: 140,
             width: '100%',
             type: "area",
             responsive: [
@@ -99,19 +99,18 @@ export function inicializaGraficos() {
    // Gráfico pie faturamento
    const graficoFaturamentoOptions = {
     series: [{
-      name: 'Faturamento',
+      name: 'Coletas',
       data: [40, 20, 20]
     }],
     chart: {
       type: 'bar',
-      height: 150
+      height: 130
     },
     plotOptions: {
       bar: {
         borderRadius: 4,
         borderRadiusApplication: 'end',
         horizontal: true,
-        columnWidth: "25%"
       }
     },
     dataLabels: {
@@ -119,7 +118,7 @@ export function inicializaGraficos() {
     },
     colors: ['#FF5733'], // Cor das barras
     xaxis: {
-      categories: ["Lucro Bruto", "Lucro Líquido", "Taxas e Impostos"],
+      categories: ["Coletas Realizadas", "Coletas Canceladas", "Coletas em Espera"],
       labels: {
         style: {
            // Cor das labels do eixo x
