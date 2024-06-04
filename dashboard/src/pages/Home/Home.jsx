@@ -33,7 +33,7 @@ function Home() {
             <ContainerDash
               titulo="Faturamento Total"
               idChart="chart-bar"
-            />
+            />         
 
             <div className="flex justify-between items-center w-full mt-1 mb-1">
               <ContainerData titulo={"Maior Retorno"} valor={"Cliente"} />

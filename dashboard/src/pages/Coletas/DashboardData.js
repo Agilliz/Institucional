@@ -40,24 +40,7 @@ export function inicializaGraficos() {
             colors: ['#2C2D5B']
         },
         fill: {
-            type: "gradient",
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.5,
-                opacityTo: 0.8,
-                colorStops: [
-                    {
-                        offset: 0,
-                        color: "#2C2D5B",
-                        opacity: 0.5
-                    },
-                    {
-                        offset: 100,
-                        color: "#2C2D5B",
-                        opacity: 0.8
-                    }
-                ]
-            }
+            colors: ['#3d3e6c'] // Altere essa cor para a cor desejada
         },
         xaxis: {
             categories: [
@@ -91,6 +74,7 @@ export function inicializaGraficos() {
             }
         }
     };
+    
 
     const graficoLinha = new ApexCharts(document.querySelector("#chart-linha"), graficoLinhaOptions);
     graficoLinha.render();
