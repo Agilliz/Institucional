@@ -3,7 +3,7 @@ import Titulo from "../../components/Titulo";
 import PeriodoCalendario from "../../components/PeriodoCalendario";
 import Modal from "../../components/Modal";
 import ContainerDash from "./ComponentesDash/ContainerDash";
-import { inicializaGraficos } from "./ComponentesDash/DashboardData";
+import { inicializaGraficos } from "./DashboardData";
 import ContainerData from "./ComponentesDash/ContainerData";
 import Button from "./ComponentesDash/button";
 import ContainerZona from "./ComponentesDash/ContainerMapaZona";
