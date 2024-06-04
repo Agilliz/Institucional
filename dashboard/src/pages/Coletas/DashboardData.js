@@ -2,7 +2,7 @@ import ApexCharts from 'apexcharts';
 
 export function inicializaGraficos() {
     // Gráfico linha custos
-    const graficoCustosOptions = {
+    const graficoLinhaOptions = {
         chart: {
             height: 140,
             width: '100%',
@@ -92,12 +92,12 @@ export function inicializaGraficos() {
         }
     };
 
-    const graficoCustos = new ApexCharts(document.querySelector("#chart-linha-custo"), graficoCustosOptions);
-    graficoCustos.render();
+    const graficoLinha = new ApexCharts(document.querySelector("#chart-linha"), graficoLinhaOptions);
+    graficoLinha.render();
 
     // Gráfico pie faturamento
    // Gráfico pie faturamento
-   const graficoFaturamentoOptions = {
+   const graficoBarOptions = {
     series: [{
       name: 'Coletas',
       data: [40, 20, 20]
@@ -141,8 +141,8 @@ export function inicializaGraficos() {
   };
 
 
-    const graficoFaturamento = new ApexCharts(document.querySelector("#chart-pie-faturamento"), graficoFaturamentoOptions);
-    graficoFaturamento.render();
+    const graficoBar = new ApexCharts(document.querySelector("#chart-bar"), graficoBarOptions);
+    graficoBar.render();
 
-    return [graficoCustos, graficoFaturamento];
+    return [graficoLinha, graficoBar];
 }

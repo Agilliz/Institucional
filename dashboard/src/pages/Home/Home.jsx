@@ -32,7 +32,7 @@ function Home() {
           <div className="w-1/2 flex justify-center items-center p-3 pb-0 flex-col mb-2">
             <ContainerDash
               titulo="Faturamento Total"
-              idChart="chart-pie-faturamento"
+              idChart="chart-bar"
             />
 
             <div className="flex justify-between items-center w-full mt-1 mb-1">
@@ -48,7 +48,7 @@ function Home() {
           <div className="w-1/2 flex justify-center items-center p-3 pb-2 flex-col">
             <ContainerDash
               titulo="Custo Operacional"
-              idChart="chart-linha-custo"
+              idChart="chart-linha"
             />
             <div className="flex justify-center items-center w-full pt-0">
               <div className="flex justify-center items-center w-full flex-col">
