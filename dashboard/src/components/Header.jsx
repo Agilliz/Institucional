@@ -1,8 +1,12 @@
 import { MdNotifications } from "react-icons/md";
 import { PiUserRectangleFill } from "react-icons/pi";
 import { FaCircleArrowLeft } from "react-icons/fa6";
+import { useLocation } from "react-router-dom"
+
+
 const Header = () => {
 
+  const location = useLocation();
 
   return (
 
@@ -12,7 +16,7 @@ const Header = () => {
       <FaCircleArrowLeft />
       </span>
       <div className='flex flex-col justify-center items-center w-1/2'>
-        <strong>Agiliz consulting</strong>
+        <strong>{}</strong>
       </div>
       <div className='flex justify-end w-1/2'>
         <div className='flex items-center w-1/3 justify-around pr-10'>
