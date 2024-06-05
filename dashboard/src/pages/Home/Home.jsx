@@ -29,13 +29,13 @@ function Home() {
 
       <div className="w-full h-auto flex flex-col">
         <div className="flex w-full">
-          <div className="w-1/2 flex justify-center items-center p-3 pb-0 flex-col mb-2">
+          <div className="w-1/2 flex justify-center items-center p-3 pb-0 flex-col mb-7">
             <ContainerDash
               titulo="Faturamento Total"
               idChart="chart-bar"
             />         
 
-            <div className="flex justify-between items-center w-full mt-1 mb-1">
+            <div className="flex justify-between items-center w-full mb-3">
               <ContainerData titulo={"Maior Retorno"} valor={"Cliente"} />
               <ContainerData titulo={"Menor Retorno"} valor={"Cliente"} />
             </div>
@@ -45,21 +45,21 @@ function Home() {
             </div>
           </div>
 
-          <div className="w-1/2 flex justify-center items-center p-3 pb-2 flex-col">
+          <div className="w-1/2 flex justify-center items-center p-3 pb-0 flex-col mb-7">
             <ContainerDash
               titulo="Custo Operacional"
               idChart="chart-linha"
             />
-            <div className="flex justify-center items-center w-full pt-0">
+            <div className="flex justify-center items-center w-full">
               <div className="flex justify-center items-center w-full flex-col">
-                <div className="flex justify-between items-center w-full pt-2">
+                <div className="flex justify-between items-center w-full pt-1 mb-3">
                   <ContainerData titulo={"Ticket Médio"} valor={"R$ 700,00"} />
                   <ContainerData
                     titulo={"Despesas Variáveis"}
                     valor={"R$ 300,00"}
                   />
                 </div>
-                <div className="flex justify-between items-center w-full pt-0.5">
+                <div className="flex justify-between items-center w-full mb-2">
                   <ContainerData
                     titulo={"Despesas Fixas"}
                     valor={"R$ 27.000,00"}

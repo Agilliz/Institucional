@@ -2,7 +2,7 @@ import React from "react";
 
 function Button() {
   return (
-    <button className="bg-orange-500 text-white font-bold py-4 px-6 rounded-xl mb-3 ml-3">
+    <button className="bg-orange-500 text-white font-bold py-4 px-6 rounded-xl ml-3 mt-4">
       <div className="flex justify-center items-center">
       Gerar Relatório
       <svg className="m-2.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down" viewBox="0 0 16 16">
