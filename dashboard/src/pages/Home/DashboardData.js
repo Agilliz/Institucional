@@ -4,7 +4,7 @@ export function inicializaGraficos() {
     // Gráfico linha custos
     const graficoLinhaOptions = {
         chart: {
-            height: 150,
+            height: 180,
             width: '100%',
             type: "area",
             responsive: [
@@ -87,7 +87,7 @@ export function inicializaGraficos() {
     }],
     chart: {
       type: 'bar',
-      height: 150
+      height: 180
     },
     plotOptions: {
       bar: {
