@@ -4,7 +4,7 @@ export function inicializaGraficos() {
     // Gráfico linha custos
     const graficoLinhaOptions = {
         chart: {
-            height: 140,
+            height: 180,
             width: '100%',
             type: "area",
             responsive: [
@@ -74,7 +74,6 @@ export function inicializaGraficos() {
             }
         }
     };
-    
 
     const graficoLinha = new ApexCharts(document.querySelector("#chart-linha"), graficoLinhaOptions);
     graficoLinha.render();
@@ -83,18 +82,19 @@ export function inicializaGraficos() {
    // Gráfico pie faturamento
    const graficoBarOptions = {
     series: [{
-      name: 'Coletas',
+      name: 'Faturamento',
       data: [40, 20, 20]
     }],
     chart: {
       type: 'bar',
-      height: 130
+      height: 180
     },
     plotOptions: {
       bar: {
         borderRadius: 4,
         borderRadiusApplication: 'end',
         horizontal: true,
+        columnWidth: "25%"
       }
     },
     dataLabels: {
@@ -102,7 +102,7 @@ export function inicializaGraficos() {
     },
     colors: ['#FF5733'], // Cor das barras
     xaxis: {
-      categories: ["Coletas Realizadas", "Coletas Canceladas", "Coletas em Espera"],
+      categories: ["Lucro Bruto", "Lucro Líquido", "Taxas e Impostos"],
       labels: {
         style: {
            // Cor das labels do eixo x
@@ -125,8 +125,9 @@ export function inicializaGraficos() {
   };
 
 
-    const graficoBar = new ApexCharts(document.querySelector("#chart-bar"), graficoBarOptions);
-    graficoBar.render();
+   
+  const graficoBar = new ApexCharts(document.querySelector("#chart-bar"), graficoBarOptions);
+  graficoBar.render();
 
-    return [graficoLinha, graficoBar];
+  return [graficoLinha, graficoBar];
 }

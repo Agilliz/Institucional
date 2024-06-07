@@ -2,9 +2,9 @@ import ApexCharts from 'apexcharts';
 
 export function inicializaGraficos() {
     // Gráfico linha custos
-    const graficoCustosOptions = {
+    const graficoLinhaOptions = {
         chart: {
-            height: 150,
+            height: 140,
             width: '100%',
             type: "area",
             responsive: [
@@ -40,24 +40,7 @@ export function inicializaGraficos() {
             colors: ['#2C2D5B']
         },
         fill: {
-            type: "gradient",
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.5,
-                opacityTo: 0.8,
-                colorStops: [
-                    {
-                        offset: 0,
-                        color: "#2C2D5B",
-                        opacity: 0.5
-                    },
-                    {
-                        offset: 100,
-                        color: "#2C2D5B",
-                        opacity: 0.8
-                    }
-                ]
-            }
+            colors: ['#3d3e6c'] // Altere essa cor para a cor desejada
         },
         xaxis: {
             categories: [
@@ -92,26 +75,25 @@ export function inicializaGraficos() {
         }
     };
 
-    const graficoCustos = new ApexCharts(document.querySelector("#chart-linha-custo"), graficoCustosOptions);
-    graficoCustos.render();
+    const graficoLinha = new ApexCharts(document.querySelector("#chart-linha"), graficoLinhaOptions);
+    graficoLinha.render();
 
     // Gráfico pie faturamento
    // Gráfico pie faturamento
-   const graficoFaturamentoOptions = {
+   const graficoBarOptions = {
     series: [{
-      name: 'Faturamento',
+      name: 'Coletas',
       data: [40, 20, 20]
     }],
     chart: {
       type: 'bar',
-      height: 150
+      height: 130
     },
     plotOptions: {
       bar: {
         borderRadius: 4,
         borderRadiusApplication: 'end',
         horizontal: true,
-        columnWidth: "25%"
       }
     },
     dataLabels: {
@@ -119,7 +101,7 @@ export function inicializaGraficos() {
     },
     colors: ['#FF5733'], // Cor das barras
     xaxis: {
-      categories: ["Lucro Bruto", "Lucro Líquido", "Taxas e Impostos"],
+      categories: ["Coletas Realizadas", "Coletas Canceladas", "Coletas em Espera"],
       labels: {
         style: {
            // Cor das labels do eixo x
@@ -142,8 +124,8 @@ export function inicializaGraficos() {
   };
 
 
-    const graficoFaturamento = new ApexCharts(document.querySelector("#chart-pie-faturamento"), graficoFaturamentoOptions);
-    graficoFaturamento.render();
+  const graficoBar = new ApexCharts(document.querySelector("#chart-bar"), graficoBarOptions);
+  graficoBar.render();
 
-    return [graficoCustos, graficoFaturamento];
+  return [graficoLinha, graficoBar];
 }
