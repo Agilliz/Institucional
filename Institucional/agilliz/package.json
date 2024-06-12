@@ -20,7 +20,7 @@
     },
     "scripts": {
         "start": "node ./Institucional/agilliz/src/App.js",
-        "postinstall": "cd src && npm install"
+        "postinstall": "npm install"
     },
     "eslintConfig": {
         "extends": [
