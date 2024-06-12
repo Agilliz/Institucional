@@ -18,10 +18,10 @@
         "react-scripts": "^5.0.1",
         "web-vitals": "^2.1.4"
     },
-  "scripts": {
-    "start": "node ./Institucional/agilliz/App.js",
-    "postinstall": "cd agilliz && npm install"
-},
+    "scripts": {
+        "start": "node ./Institucional/agilliz/src/App.js",
+        "postinstall": "cd src && npm install"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",
