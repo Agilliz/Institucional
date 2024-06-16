@@ -19,7 +19,7 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "node ./Institucional/Institucional/agilliz/src/App.js",
+        "start": "node ./Institucional/agilliz/src/App.js",
         "postinstall": "npm install"
     },
     "eslintConfig": {
