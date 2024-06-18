@@ -8,11 +8,10 @@ import numero1ModOperacoes from "../../images/svgNumero1Mod.svg";
 import segundaImagemModo from "../../images/segunda-imagem-modo.svg";
 import vetorSeta1 from "../../images/vetor-seta-1.svg";
 import vetorSeta2 from "../../images/vetor-seta-2.svg";
-// import maoCelular from "../../images/maeMadeira.svg"
-import mao from "../../images/maoViti.png"
+import mao from "../../images/maoViti.png";
 import Etapa from "../../components/etapaModoOperacao/EtapaModoOperacao";
 import numero3ModOperacoes from "../../images/svgNumero3Mod.svg";
-import rapazMoto from "../../images/rapazMoto.svg"; 
+import rapazMoto from "../../images/rapazMoto.svg";
 import numero2ModOperacoes from "../../images/svgNumero2Mod.svg";
 import mocaMoto from "../../images/mocaNaMoto.svg";
 import caminhaoBeneficios from "../../images/svgCaminhaoBeneficios.svg";
@@ -20,16 +19,23 @@ import ContainerBeneficios from "../../components/containerBeneficios/containerB
 import casaBeneficios from "../../images/casaBeneficios.svg";
 import localBeneficios from "../../images/localBeneficios.svg";
 import { Fade } from "react-awesome-reveal";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Footer from "../../components/footer/Footer";
-import styles from "../institucional/Home.module.css"
+import styles from "../institucional/Home.module.css";
+import TelaContratarServico from "../../components/telaContratarServico/TelaContratar";
 
 function Institucional() {
-
   const [modalOpen, setModalOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
-    
     <div className="App">
       <div className="h-screen">
         <div className="flex">
@@ -55,15 +61,29 @@ function Institucional() {
                     }}
                   >
                     <h1>
-                      O <b><span style={{ color: "#DE6600", fontWeight: "500" }}>Poder</span></b> da
-                      logística na palma da
+                      O{" "}
+                      <b>
+                        <span style={{ color: "#DE6600", fontWeight: "500" }}>
+                          Poder
+                        </span>
+                      </b>{" "}
+                      da logística na palma da
                     </h1>
                     <h1>
-                      sua <b><span style={{ color: "#DE6600", fontWeight: "500"  }}>Mão </span></b> e ao
-                      dispor da sua
+                      sua{" "}
+                      <b>
+                        <span style={{ color: "#DE6600", fontWeight: "500" }}>
+                          Mão{" "}
+                        </span>
+                      </b>{" "}
+                      e ao dispor da sua
                     </h1>
                     <h1>
-                      <b><span style={{ color: "#DE6600", fontWeight: "500" }}>Empresa</span></b>
+                      <b>
+                        <span style={{ color: "#DE6600", fontWeight: "500" }}>
+                          Empresa
+                        </span>
+                      </b>
                     </h1>
                     <button
                       style={{
@@ -75,31 +95,36 @@ function Institucional() {
                         marginTop: "2%",
                         color: "white",
                       }}
+                      onClick={handleOpenModal}
                     >
                       Contratar Serviço
                     </button>
+                    {modalOpen && (
+                      <div className={styles.modalOverlay}>
+                        <div className={styles.modalContent}>
+                          <TelaContratarServico onClose={handleCloseModal} />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </>
               }
               ladoDireito={
-                <div
-                
-              >
-              
-                <img src={mao} alt="Mão segurando celular com logo da empresa (Lebre laranja)" className={styles.MaoCelular} style={{
-                  
-                  maxWidth: "40vw",
-                  
-                }}/>
+                <div>
+                  <img
+                    src={mao}
+                    alt="Mão segurando celular com logo da empresa (Lebre laranja)"
+                    className={styles.MaoCelular}
+                    style={{
+                      maxWidth: "40vw",
+                    }}
+                  />
                 </div>
               }
             />
           </div>
           <div className="w-full flex items-center justify-center">
-            <Container
-            altura={"4vh"}
-            corFundo={"#F4F6F9"}
-            />
+            <Container altura={"4vh"} corFundo={"#F4F6F9"} />
             <Container
               tituloSessao={
                 <div>
@@ -112,17 +137,16 @@ function Institucional() {
                     }}
                   >
                     <b>
-                    <span
-                      style={{
-                        borderBottom: "4px solid #DE6600",
-                        borderRadius: "3px",
-                        fontWeight: "700"
-                      }}
-                    >
-                      SOBRE
-                    </span>
-                    </b>
-                    {" "}
+                      <span
+                        style={{
+                          borderBottom: "4px solid #DE6600",
+                          borderRadius: "3px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        SOBRE
+                      </span>
+                    </b>{" "}
                     NÓS
                   </h1>
                 </div>
@@ -187,7 +211,7 @@ function Institucional() {
               }
             />
           </div>
-              <Container altura={"1vh"} corFundo={"#F4F6F9"} />
+          <Container altura={"1vh"} corFundo={"#F4F6F9"} />
           <div
             className="w-full flex items-center justify-center"
             style={{ position: "relative" }}
@@ -254,7 +278,7 @@ function Institucional() {
                           style={{
                             borderBottom: "4px solid #DE6600",
                             borderRadius: "3px",
-                            fontWeight: "700"
+                            fontWeight: "700",
                           }}
                         >
                           MODO
@@ -266,9 +290,7 @@ function Institucional() {
                 </div>
               }
               largura={50}
-              
               ladoEsquerdo={
-                
                 <div
                   style={{
                     display: "flex",
@@ -276,22 +298,21 @@ function Institucional() {
                     justifyContent: "center",
                     alignItems: "center",
                     textAlign: "center",
-                    width: "100%"
+                    width: "100%",
                   }}
                 >
-            <Fade cascade duration={1000}>
-                  <Etapa
-                    texto={`<span>Com nosso aplicativo móvel, o</span>
+                  <Fade cascade duration={1000}>
+                    <Etapa
+                      texto={`<span>Com nosso aplicativo móvel, o</span>
                  <span>coletor pode escanear facilmente</span>
                  <span>todos os pacotes do fornecedor</span>
                  <span>de forma rápida e prática. </span>`}
-                    svgNUmeroEtapa={numero1ModOperacoes}
-                    etapa={"Coleta"}
-                  />
+                      svgNUmeroEtapa={numero1ModOperacoes}
+                      etapa={"Coleta"}
+                    />
                   </Fade>
 
-                  
-              <Fade cascade duration={1000}>
+                  <Fade cascade duration={1000}>
                     <ImagemModo
                       srcParam={segundaImagemModo}
                       altParam={
@@ -299,8 +320,8 @@ function Institucional() {
                       }
                       size={20}
                     />
-                    </Fade>
-                <Fade cascade duration={1000}>
+                  </Fade>
+                  <Fade cascade duration={1000}>
                     <Etapa
                       texto={`<span>Os entregadores selecionam as</span>
                         <span>rotas de entrega de sua preferência</span>
@@ -313,8 +334,7 @@ function Institucional() {
                       etapa={"Entregas"}
                       margem={"10%"}
                     />
-                    </Fade>
-                  
+                  </Fade>
                 </div>
               }
               ladoDireito={
@@ -326,116 +346,115 @@ function Institucional() {
                     alignItems: "center",
                     textAlign: "center",
                     marginBottom: "10%",
-                    width: "100%"
+                    width: "100%",
                   }}
                 >
-            <Fade cascade duration={1000}>
-                  <ImagemModo
-                    srcParam={rapazMoto}
-                    altParam={"Rapaz andando de moto com rotas ao fundo"}
-                   size={30}
-                  />
+                  <Fade cascade duration={1000}>
+                    <ImagemModo
+                      srcParam={rapazMoto}
+                      altParam={"Rapaz andando de moto com rotas ao fundo"}
+                      size={30}
+                    />
                   </Fade>
-            <Fade cascade duration={1000}>
-                  <Etapa
-                    texto={`<span>Após a coleta, os pacotes serão</span>
+                  <Fade cascade duration={1000}>
+                    <Etapa
+                      texto={`<span>Após a coleta, os pacotes serão</span>
                         <span>prontamente reconhecidos em</span>
                         <span>nosso sistema, permitindo a criação</span>
                         <span>de zonas de entrega personalizadas</span>
                         <span>com base nas demandas específicas</span>
                         <span>atendidas pela sua empresa. Isso</span>
                         <span>otimiza o processo de distribuição.</span>`}
-                    svgNUmeroEtapa={numero2ModOperacoes}
-                    etapa={"Gestão e Preparo"}
-                  />
+                      svgNUmeroEtapa={numero2ModOperacoes}
+                      etapa={"Gestão e Preparo"}
+                    />
                   </Fade>
-            <Fade cascade duration={1000}>
-                  <ImagemModo
-                    srcParam={mocaMoto}
-                    altParam={
-                      "Moça apoiada em uma moto com uma imagem de rota ao fundo"
-                    }
-                    size={25}
-                    
-                  />
+                  <Fade cascade duration={1000}>
+                    <ImagemModo
+                      srcParam={mocaMoto}
+                      altParam={
+                        "Moça apoiada em uma moto com uma imagem de rota ao fundo"
+                      }
+                      size={25}
+                    />
                   </Fade>
                 </div>
               }
             />
 
-              <Fade>
-            <Container
-              altura={"80vh"}
-              corFundo={"#F4F6F9"}
-              largura={100}
-              ladoEsquerdo={
-                <>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "90%",
-                      height: "85%",
-                      alignItems: "flex-end",
-                      flexDirection: "column",
-                    }}
-                  >
+            <Fade>
+              <Container
+                altura={"80vh"}
+                corFundo={"#F4F6F9"}
+                largura={100}
+                ladoEsquerdo={
+                  <>
                     <div
                       style={{
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: "100%",
+                        width: "90%",
+                        height: "85%",
+                        alignItems: "flex-end",
+                        flexDirection: "column",
                       }}
                     >
                       <div
                         style={{
                           display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "top",
-                          width: "80%",
-                          height: "auto",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          width: "100%",
                         }}
                       >
                         <div
                           style={{
-                            fontSize: "32px",
-                            textAlign: "center",
-                            fontWeight: "400",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "top",
+                            width: "80%",
+                            height: "auto",
                           }}
                         >
-                          <h1>
-                            <span
-                              style={{
-                                borderBottom: "4px solid #DE6600",
-                                borderRadius: "3px",
-                              }}
-                            >
-                              <b>Benefícios</b>
-                            </span>
-                            <span> e vantagens </span>
-                          </h1>
+                          <div
+                            style={{
+                              fontSize: "32px",
+                              textAlign: "center",
+                              fontWeight: "400",
+                            }}
+                          >
+                            <h1>
+                              <span
+                                style={{
+                                  borderBottom: "4px solid #DE6600",
+                                  borderRadius: "3px",
+                                }}
+                              >
+                                <b>Benefícios</b>
+                              </span>
+                              <span> e vantagens </span>
+                            </h1>
+                          </div>
+                          <img
+                            src={fotoCaminhao}
+                            alt="Decoração com imagem simples de caminhão"
+                            style={{
+                              maxWidth: "15%",
+                              maxHeight: "15%",
+                              zIndex: "1",
+                            }}
+                          ></img>
                         </div>
-                        <img
-                          src={fotoCaminhao}
-                          alt="Decoração com imagem simples de caminhão"
-                          style={{
-                            maxWidth: "15%",
-                            maxHeight: "15%",
-                            zIndex: "1",
-                          }}
-                        ></img>
                       </div>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        width: "93%",
-                        height: "85%",
-                        alignItems: "flex-start",
-                      }}
-                    >
-                      <ContainerBeneficios
-                        texto={`<span>Com a nossa solução, oferecemos </span>
+                      <div
+                        style={{
+                          display: "flex",
+                          width: "93%",
+                          height: "85%",
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <ContainerBeneficios
+                          texto={`<span>Com a nossa solução, oferecemos </span>
                <span>recursos avançados de rastreamento</span>
                <span>em tempo real que permitem que</span>
                <span>você acompanhe o status e a </span>
@@ -444,12 +463,12 @@ function Institucional() {
                <span>avançadas, como GPS e sistemas de</span>
                <span>comunicação integrados, fornecemos</span>
                <span>informações precisas e atualizadas.</span>`}
-                        titulo={"Coletas"}
-                        svg={caminhaoBeneficios}
-                      />
+                          titulo={"Coletas"}
+                          svg={caminhaoBeneficios}
+                        />
 
-                      <ContainerBeneficios
-                        texto={`
+                        <ContainerBeneficios
+                          texto={`
                   <span>Com nossa aplicação, simplificamos e</span>
                   <span>otimizamos todo o processo de </span>
                   <span>gestão e preparo de pacotes.</span>
@@ -460,12 +479,12 @@ function Institucional() {
                   <span>dos pacotes agilizando o processo de</span>
                   <span>preparação dos pacotes para o envio.</span>
                   `}
-                        titulo={"Gestão e Preparo de Pacotes"}
-                        svg={casaBeneficios}
-                      />
+                          titulo={"Gestão e Preparo de Pacotes"}
+                          svg={casaBeneficios}
+                        />
 
-                      <ContainerBeneficios
-                        texto={`<span>Oferecemos recursos avançados</span>
+                        <ContainerBeneficios
+                          texto={`<span>Oferecemos recursos avançados</span>
                       <span>de roteirização e otimização</span>
                       <span>de rotas, permitindo que você</span>
                       <span>planeje entregas de forma</span>
@@ -475,14 +494,14 @@ function Institucional() {
                       <span>tempo real entre os entregadores</span>
                       <span>e a central de logística.</span>
                       `}
-                        titulo={"Entregas"}
-                        svg={localBeneficios}
-                      />
+                          titulo={"Entregas"}
+                          svg={localBeneficios}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </>
-              }
-            />
+                  </>
+                }
+              />
             </Fade>
 
             <Container
@@ -508,33 +527,39 @@ function Institucional() {
                       fontWeight: "500",
                       marginTop: "10%",
                     }}
+                    onClick={handleOpenModal}
                   >
                     Contratar Serviço
                   </button>
+                  {modalOpen && (
+                    <div className={styles.modalOverlay}>
+                      <div className={styles.modalContent}>
+                        <TelaContratarServico onClose={handleCloseModal} />
+                      </div>
+                    </div>
+                  )}
                 </div>
               }
             />
-            <Container
-            altura={"4vh"}
-            />
+
+            <Container altura={"4vh"} />
             <Container
               altura={"88vh"}
               largura={100}
               tituloSessao={
-                <div >
+                <div>
                   <h1
                     style={{
                       fontSize: "32px",
                       textAlign: "center",
                       fontWeight: "600",
-                      
                     }}
                   >
                     <span
                       style={{
                         borderBottom: "4px solid #DE6600",
                         borderRadius: "3px",
-                        fontWeight: "700"
+                        fontWeight: "700",
                       }}
                     >
                       Envie -
@@ -556,7 +581,7 @@ function Institucional() {
                       borderRadius: "10px",
                       flexDirection: "column",
                       position: "relative",
-                      marginBottom: "%"
+                      marginBottom: "%",
                     }}
                   >
                     <div
@@ -643,18 +668,12 @@ function Institucional() {
               }
             />
 
-              <Footer/>
-           
+            <Footer />
           </div>
         </div>
       </div>
     </div>
   );
-
 }
-
-
-
-
 
 export default Institucional;
