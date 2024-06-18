@@ -123,7 +123,7 @@ function Institucional() {
               }
             />
           </div>
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full flex items-center justify-center" id="idContainerSobreNos">
             <Container altura={"4vh"} corFundo={"#F4F6F9"} />
             <Container
               tituloSessao={
@@ -215,6 +215,7 @@ function Institucional() {
           <div
             className="w-full flex items-center justify-center"
             style={{ position: "relative" }}
+            id="idModoOperacoes"
           >
             <div
               style={{
@@ -431,7 +432,7 @@ function Institucional() {
                               >
                                 <b>Benefícios</b>
                               </span>
-                              <span> e vantagens </span>
+                              <span id="idContainerBeneficios"> e vantagens </span>
                             </h1>
                           </div>
                           <img
@@ -561,6 +562,7 @@ function Institucional() {
                         borderRadius: "3px",
                         fontWeight: "700",
                       }}
+                      id="idContatos"
                     >
                       Envie -
                     </span>{" "}

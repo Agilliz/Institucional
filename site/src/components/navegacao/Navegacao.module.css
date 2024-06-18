@@ -33,14 +33,15 @@
   }
   
   .motoqueiro {
-    width: 50px;
-    height: 50px;
-    background-image: url('https://gifs.eco.br/wp-content/uploads/2022/02/animados-gifs-de-motoboys-4.gif');
+    width: 45px;
+    height: 45px;
+    background-image: url(../../images/motoqueiro-btn.png);
     background-size: contain;
     background-repeat: no-repeat;
+    transform: scaleX(-1);
     position: absolute;
     left: -50%;
-    margin-top: 15%;
+    margin-top: 10%;
     scale: 1;
   }
   
@@ -53,6 +54,29 @@
       left: 100%;
     }
     
+  }
+
+  .li {
+    position: relative;
+  }
+  
+  .li:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #DE6600;
+    animation: animacaoUnderline 0.2s ease forwards;
+  }
+  
+  @keyframes animacaoUnderline {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 
   
