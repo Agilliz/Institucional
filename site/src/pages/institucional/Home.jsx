@@ -527,6 +527,7 @@ function Institucional() {
                       color: "white",
                       fontWeight: "500",
                       marginTop: "10%",
+                      fontSize: "1rem"
                     }}
                     onClick={handleOpenModal}
                   >
