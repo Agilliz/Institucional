@@ -58,6 +58,7 @@
 
   .li {
     position: relative;
+    cursor: pointer;
   }
   
   .li:hover::after {
